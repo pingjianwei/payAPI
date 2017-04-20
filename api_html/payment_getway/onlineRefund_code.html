@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>在线退货示例代码</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/api/common.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <!-- 头部start -->
+    <header class="topbar_color">
+        <div  class="container search_top">
+            <nav class="navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand icon_logo" href="../index.html">
+                     <span id="logo_title">润孚 • 接口数据平台</span>
+                  </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="tel:400-021-198">商务咨询：400-021-198</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </header><!-- 头部end -->
+    
+    <!-- 导航 start-->
+    <nav class="container"><br>
+        <ol class="breadcrumb navbar-default">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="payment_getway.html">支付网关</a></li>
+            <li class="active">退货示例代码</li>
+        </ol>
+    </nav>
+    
+    <!-- 主要板块 -->
+    <article class="container main-height code_content">
+      <input type="button" value="复制" class="code_button" data-clipboard-target="#foo" aria-label="复制成功！">
+      
+      <div class="container">
+      
+        <!-- 左侧列表 -->
+        <div class="code_left col-md-1 col-sm-1 col-xs-1">
+            <pre class="code_pre">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50</pre>
+        </div>
+        
+        <!-- 右侧示例代码 -->
+        <div class="code_right col-md-11 col-sm-11 col-xs-11"> 
+            <div id="foo">
+                <pre class="code_pre">
+/*该main方法模拟退货请求*/
+public static void main(String[] args)  {
+        Map<String,String> reqData=new HashMap<String, String>();
+        try{
+            reqData.put("merchId", "000001");//商户号
+            reqData.put("tranDate",  new SimpleDateFormat("yyyyMMdd").format(new Date()));//交易日期(yyyyMMdd)
+            reqData.put("tranId",  String.valueOf(System.currentTimeMillis()));//流水号
+            reqData.put("tranTime", new SimpleDateFormat("HHmmss").format(new Date()));//交易时间(hhmmss)
+            reqData.put("origTranDate", "20170414");//支付时的交易日期
+            reqData.put("origTranId", "1492162863881");//支付时的交易流水号
+            reqData.put("origQueryId", "20170414174301712179944");//支付成功后台通知返回的查询Id
+            reqData.put("tranAmt", "1");//支付交易金额，单位：元
+            reqData.put("trustBackUrl", "http://127.0.0.1:8080/trust-gateway/pay/payFrontResp");//退货后台通知地址
+            String signStr= SignatureStrUtil.getOnlineRefundString(reqData,"utf-8");//生成签名串
+            System.out.println(signStr);
+            File file=new File("D:\\private_key.pem");
+            String hexPrivateKey = SignatureCertificate.getPemPrivateKeySignStr(file);//拿到hex的私钥字符串
+            String signature = new SignatureData().sign(signStr, hexPrivateKey);//生成签名
+            reqData.put("signature", signature);//将签名放入请求数据中
+            String url="http://tpay.trust-one.com/pg/refund";//该URL为测试退货环境的URL。
+            HttpClient hc  = new HttpClient(url,2000,2000);
+            int respCode=hc.send(reqData,"utf-8");//那到请求的响应码
+            System.out.println("响应状态码:"+respCode);
+            String respMessage=hc.getResult();//发送请求，并返回相应数据
+            System.out.println("请求报文=["+reqData.toString()+"]");
+            System.out.println("应答报文=["+respMessage+"]");//同步应答报文
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    
+    /*该方法用来接收，退货交易后台通知请求*/
+    @RequestMapping(value = "refundBackResp")
+    public String refundBackResp(HttpServletRequest request) throws Exception {
+        Map<String,String> respData= ParametersUtil.PackReqParamToMap(request);//将request对象中的参数封装到map对象中
+        String signature=respData.get("signature");//拿到签名
+        System.out.println("signature:"+signature);
+        String signStr=SignatureStrUtil.getOnlineRefundString(respData,"utf-8");//生成签名串
+        System.out.println("signStr"+signStr);
+        File file =new File("D:\\public_key.pem");
+        String hexPublicKey=SignatureCertificate.getPemPublicKeySignStr(file);//拿到16进制的公钥
+        boolean flag=new com.runfu.acp.util.VerifySignature().run(signStr, hexPublicKey, signature);//验签退货后台通知数据
+        System.out.println("退货异步响应数据："+respData.toString());
+        System.out.println("验签结果："+flag);
+        return "success";
+    }</pre>
+	            </div>
+	        </div><!-- 右侧代码 end -->
+	    </div>
+    </article><!-- 主要板块 end -->
+    
+    <!-- 底部  start-->
+    <footer class="footer_color">
+        <address class="container footer">
+              <p><ins></ins>　 润孚接口数据平台</p>
+              <p>商务咨询：400-021-198　　　　工作时间:周一至周五 10:00-19:00　　　　反馈建议：service@trust-one.com</p>
+              <p>润孚网络科技（上海）有限公司沪ICP备16028054号</p>
+        </address>
+    </footer>
+    <!--  底部end -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="../../js/api/clipboard.min.js"></script>
+    <script type="text/javascript">
+        var clipboard = new Clipboard('.code_button');
+        clipboard.on('success', function(e) {
+            var msg = e.trigger.getAttribute('aria-label');
+            alert(msg);
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+    </script>
+    </body>
+</html>

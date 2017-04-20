@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>手机实名认证示例代码</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/api/common.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="topbar_color">
+    	<div  class="container search_top">
+	    	<nav class="navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" style="display:none;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand icon_logo" href="../index.html"><span id="logo_title">润孚 • 接口数据平台</span></a>
+			    </div>
+	
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			       <div class="form-group col-md-5 col-sm-8 col-xs-12 search_top col-md-offset-1">  
+					    <div class="input-group col-xs-12" style="display:none;">  
+					        <div class="input-group-btn">  
+					            <select name="type" class="form-control search_select">
+					                <option value="1">接口业务</option>  
+					                <option value="2">本站</option>  
+					            </select>  
+					        </div> 
+					        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+					        <input type="text" name="keyword" id="keyword" class="form-control" placeholder="请您输入关键词">  
+					    </div>  
+					</div> 
+				    <ul class="nav navbar-nav navbar-right">
+				        <li><a href="tel:400-021-198">商务咨询：400-021-198</a></li>
+				    </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+    </header>
+    <nav class="container"><br>
+        <ol class="breadcrumb navbar-default">
+		    <li><a href="../index.html">首页</a></li>
+		    <li><a href="authentication_phone.html">手机实名认证</a></li>
+			<li class="active">示例代码</li>
+		</ol>
+    </nav>
+	<article class="container main-height code_content">
+      <input type="button" value="复制" class="code_button" data-clipboard-target="#foo" aria-label="复制成功！">
+	  <div class="container">
+		<div class="code_left col-md-1 col-sm-1 col-xs-1">
+			<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70</p>
+		</div>
+	    <div class="code_right col-md-11 col-sm-11 col-xs-11">
+	    	<p id="foo">public static void main(String[] args) {<br>
+　　　　Map<String,String>data=new HashMap<String, String>();<br>
+　　　　String priKey = PropertiesUtil.getSrcProperty("merchant_info", "priKey");//从配置文件中获取私钥<br>
+　　　　String priKey =PropertiesUtil.getPropertyFromPath("path", "merchant_info", "priKey");//从指定路径获取配置文件中的私钥<br>
+　　　　String priKey =PropertiesUtil.getOutsideProperty("merchant_info", "priKey");//从tomcat的webapps下面获取配置文件<br>
+　　　　String url = PropertiesUtil.getSrcProperty("merchant_info", "realName_phone_url");//从配置文件中获取银行卡验证的url<br>
+　　　　String merchId=PropertiesUtil.getSrcProperty("merchant_info", "merchId");//商户号(商户可改为自己的商户号)<br>
+　　　　data.put("merchId", merchId);//商户号<br>
+　　　　data.put("tranDate",  new SimpleDateFormat("yyyyMMdd").format(new Date()));//交易日期(yyyyMMdd)<br>
+　　　　data.put("tranId",  String.valueOf(System.currentTimeMillis()));//流水号<br>
+　　　　data.put("tranTime", new SimpleDateFormat("HHmmss").format(new Date()));//交易时间(hhmmss)<br>
+　　　　data.put("name", "");//姓名<br>
+　　　　data.put("certNo", "");//身份证号<br>
+　　　　data.put("phone", "");//身份证号<br>
+　　　　SignatureData signatureData = new SignatureData();<br>
+　　　　String info=SignatureStrUtil.getIdRealNameSignatureStr(data, encoding);<br>
+　　　　info=info+data.get("phone");<br>
+　　　　String signature = signatureData.sign(info, priKey);<br>
+　　　　data.put("signature", signature);<br>
+　　　　Map<String, String> resmap = submitUrl(data, url);<br>
+　　　　System.out.println("请求报文=["+data.toString()+"]");<br>
+　　　　System.out.println("应答报文=["+resmap.toString()+"]");<br>
+　　　　}<br>
+private static Map<String, String> submitUrl(<br>
+　　　　　　　Map<String, String> submitFromData,String requestUrl) {<br>
+　　　　String resultString = "";<br>
+　　　　System.out.println("requestUrl====" + requestUrl);<br>
+　　　　System.out.println("submitFromData====" + submitFromData.toString());<br>
+　　　　/**<br>
+　　　　 * 发送<br>
+　　　　 */<br>
+　　　　HttpClient hc = new HttpClient(requestUrl, 30000, 30000);<br>
+　　　　String info1= getRequestParamString(submitFromData, encoding);<br>
+　　　　System.out.println(info1+"========================");<br>
+　　　　HashMap<String, String> resData=new HashMap<String, String>();<br>
+　　　　try {<br>
+　　　　　　　　int status = hc.send(submitFromData, encoding);<br>
+　　　　　　　　if (200 == status) {<br>
+　　　　　　　　System.out.println("http响应码===="+status);<br>
+　　　　　　　　resultString = hc.getResult();<br>
+　　　　　　　　System.out.println("返回结果===="+resultString);<br>
+　　　　　　　　}<br>
+　　　　　　　　resData = toHashMap(resultString);<br>
+　　　　　　　　VerifySignature verifySignature = new VerifySignature();<br>
+　　　　　　　　/**<br>
+　　　　　　　　 * 验证签名<br>
+　　　　　　　　 */<br>
+　　　　　　　　if (null != resultString && !"".equals(resultString)) {<br>
+　　　　　　　　　　String info=SignatureStrUtil.getVerSignatureString(resData);//获取公钥<br>
+　　　　　　　　　　String pubKey=PropertiesUtil.getSrcProperty("merchant_info", "pubKey");<br>
+　　　　　　　　　　String sig= resData.get("signature");<br>
+　　　　　　　　　　Boolean result = verifySignature.run(info,pubKey, sig);<br>
+　　　　　　　　　　if(result){<br>
+　　　　　　　　　　　　System.out.println("验证签名成功====================");<br>
+　　　　　　　　　　}else{<br>
+　　　　　　　　　　　　System.out.println("验证签名失败====================");<br>
+　　　　　　　　　　}<br>
+　　　　　　　　}<br>
+　　　　} catch (Exception e) {<br>
+　　　　　　e.printStackTrace();<br>
+　　　　}<br>
+　　　　return resData;<br>	
+}</p>
+	    </div>
+　　　　</div> 
+	</article>
+	<footer class="footer_color">
+		<address class="container footer">
+			  <p><ins></ins>　 润孚接口数据平台</p>
+			  <p>商务咨询：400-021-198　　　　工作时间:周一至周五 10:00-19:00　　　　反馈建议：service@trust-one.com</p>
+			  <p>润孚网络科技（上海）有限公司沪ICP备16028054号</p>
+		</address>
+	</footer>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="../../js/api/clipboard.min.js"></script>
+    <script type="text/javascript">
+	    var clipboard = new Clipboard('.code_button');
+		clipboard.on('success', function(e) {
+			var msg = e.trigger.getAttribute('aria-label');
+			alert(msg);
+		    console.info('Action:', e.action);
+		    console.info('Text:', e.text);
+		    console.info('Trigger:', e.trigger);
+		    e.clearSelection();
+		});
+		clipboard.on('error', function(e) {
+	        console.log(e);
+	    });
+    </script>
+    </body>
+</html>
