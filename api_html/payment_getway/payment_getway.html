@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width， initial-scale=1">
@@ -10,121 +10,126 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <script >
-  function jumpToRespAPI(){   
-      if(document.all) {
-      document.getElementById("clickme").click();
-      }else {
-      var e = document.createEvent("MouseEvents");
-      e.initEvent("click", true, true);
-      document.getElementById("clickme").dispatchEvent(e);
-      }     
-  }
-  
-  </script>
-  <body>
-    <header class="topbar_color">
-    	<div  class="container search_top">
-	    	<nav class="navbar-default">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand icon_logo" href="../index.html"><span id="logo_title">润孚 • 接口数据平台</span></a>
-			    </div>
-			    <!-- Collect the nav links， forms， and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-				    <ul class="nav navbar-nav navbar-right">
-				        <li><a href="tel:400-021-198">商务咨询：400-021-198</a></li>
-				    </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-		</div>
-    </header>
-    <nav class="container"><br>
-        <ol class="breadcrumb navbar-default">
-		    <li><a href="../index.html">首页</a></li>
-			<li class="active">银联支付网关</li>
-		</ol>
-    </nav>
-	<article class="container main-height">
-		<div class="row container"> 
-				<div class="col-md-2 col-sm-3 clo-xs-12">
-				     <p class="payment_ver"></p>
-				</div>
-				<div class="col-md-10 col-sm-9 clo-xs-12">
-				      <h3>银联支付网关　
-					      <small><span class="text-red">费率 1.0%</span> (最低1.0元，量多电联)</small>
-					      <br><br><small>支持银联在线支付，支持在线退货，单笔交易查询  </small>
-				      </h3>
-				      
-				</div>
-		</div><br>
-	    <!-- table切换 -->
-		<div class="container-fluid search_top">
-			<div class="row-fluid">
-				<div class="span12">
-					<div class="tabbable" id="tabs-436407">
-						<ul class="nav nav-tabs">
-							<li>
-								<a href="#payapi" data-toggle="tab">  支付api　</a>
-							</li>
-							<li>
-								<a href="#queryapi" data-toggle="tab">查询api</a>
-							</li>
-							<li>
-								<a href="#refundapi" data-toggle="tab">退货api</a>
-							</li>
-							<li>
-								<a href="#reconciliation" data-toggle="tab">对账文件</a>
-							</li>
-							<li>
-								<a href="#signStr" data-toggle="tab">签名算法</a>
-							</li>
-							<li>
-								<a href="#error" data-toggle="tab" id="clickme">api响应吗</a>
-							</li>
-							<li>
-								<a href="#pice" data-toggle="tab">价格与请求限制</a>
-							</li>
-						</ul>
-	<!--------------------------------------------------第一部分支付交易相关内容---------------------------------------------------------------------支付交易相关内容--------------------------------------------------------------------->
-						<div class="tab-content" style="margin-top:20px;">
-						    <!-- 第1部分内容. -->
-							<div class="tab-pane active" id="payapi">
-							    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
-							    	<p>
-							    	   <span class="glyphicon glyphicon-triangle-right"></span>
-							    	   <a href="" class="nav_h">在线支付</a>
-							    	</p>
-							    </div>
-							    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">接口地址：</dt>
-							    		<dd>测试：http://tpay.trust-one.com/pg/pay</dd>							    		
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">支持格式：</dt>
-							    		<dd class="pull-left">http post请求且Content-Type: application/x-www-form-urlencoded;charset=utf-8</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">请求方式：</dt>
-							    		<dd class="pull-left">http post</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">请求示例：</dt>
-							    		<dd>
+</head>
+<script>
+    function jumpToRespAPI() {
+        if (document.all) {
+            document.getElementById("clickme").click();
+        } else {
+            var e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);
+            document.getElementById("clickme").dispatchEvent(e);
+        }
+    }
+
+</script>
+<body>
+<header class="topbar_color">
+    <div class="container search_top">
+        <nav class="navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand icon_logo" href="../index.html"><span id="logo_title">润孚 • 接口数据平台</span></a>
+                </div>
+                <!-- Collect the nav links， forms， and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="tel:400-021-198">商务咨询：400-021-198</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</header>
+<nav class="container"><br>
+    <ol class="breadcrumb navbar-default">
+        <li><a href="../index.html">首页</a></li>
+        <li class="active">银联支付网关</li>
+    </ol>
+</nav>
+<article class="container main-height">
+    <div class="row container">
+        <div class="col-md-2 col-sm-3 clo-xs-12">
+            <p class="payment_ver"></p>
+        </div>
+        <div class="col-md-10 col-sm-9 clo-xs-12">
+            <h3>银联支付网关　
+                <small><span class="text-red">费率 1.0%</span> (最低1.0元，量多电联)</small>
+                <br><br>
+                <small>支持银联在线支付，支持在线退货，单笔交易查询</small>
+            </h3>
+
+        </div>
+    </div>
+    <br>
+    <!-- table切换 -->
+    <div class="container-fluid search_top">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="tabbable" id="tabs-436407">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#payapi" data-toggle="tab"> 支付api　</a>
+                        </li>
+                        <li>
+                            <a href="#queryapi" data-toggle="tab">查询api</a>
+                        </li>
+                        <li>
+                            <a href="#refundapi" data-toggle="tab">退货api</a>
+                        </li>
+                        <li>
+                            <a href="#reconciliation" data-toggle="tab">对账文件</a>
+                        </li>
+                        <li>
+                            <a href="#signStr" data-toggle="tab">签名算法</a>
+                        </li>
+                        <li>
+                            <a href="#error" data-toggle="tab" id="clickme">api响应吗</a>
+                        </li>
+                        <li>
+                            <a href="#pice" data-toggle="tab">价格与请求限制</a>
+                        </li>
+                    </ul>
+                    <!--------------------------------------------------第一部分支付交易相关内容---------------------------------------------------------------------支付交易相关内容--------------------------------------------------------------------->
+                    <div class="tab-content" style="margin-top:20px;">
+                        <!-- 第1部分内容. -->
+                        <div class="tab-pane active" id="payapi">
+                            <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
+                                <p>
+                                    <span class="glyphicon glyphicon-triangle-right"></span>
+                                    <a href="" class="nav_h">在线支付</a>
+                                </p>
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+                                <dl class="col-md-12 col-xs-12 dl_container">
+                                    <dt class="pull-left">接口地址：</dt>
+                                    <dd>测试：http://tpay.trust-one.com/pg/pay</dd>
+                                </dl>
+                                <dl class="col-md-12 col-xs-12">
+                                    <dt class="pull-left">支持格式：</dt>
+                                    <dd class="pull-left">http post请求且Content-Type:
+                                        application/x-www-form-urlencoded;charset=utf-8
+                                    </dd>
+                                </dl>
+                                <dl class="col-md-12 col-xs-12">
+                                    <dt class="pull-left">请求方式：</dt>
+                                    <dd class="pull-left">http post</dd>
+                                </dl>
+                                <dl class="col-md-12 col-xs-12 dl_container">
+                                    <dt class="pull-left">请求示例：</dt>
+                                        <dd>
 										  <textarea cols="90" rows="6" style="width: 100%;">
-<form action="http://tpay.trust-one.com/pg/pay" id="bankcard" method="post" >
+<form action="http://tpay.trust-one.com/pg/pay"  method="post">
     <table>
         <tr>
             <td align="right">商户号</td>
@@ -132,15 +137,15 @@
         </tr>
         <tr>
             <td align="right">交易日期</td>
-            <td> <input type="text" name="tranDate" value="20170412" ></td>
+            <td> <input type="text" name="tranDate" value="20170412"></td>
         </tr>
         <tr>
             <td align="right">交易流水号</td>
-            <td> <input type="text" name="tranId" value="1491988042200" ></td>
+            <td> <input type="text" name="tranId" value="1491988042200"></td>
         </tr>
         <tr>
             <td align="right">交易时间</td>
-            <td><input type="text" name="tranTime" value="170722" ></td>
+            <td><input type="text" name="tranTime" value="170722"></td>
         </tr>
         <tr>
             <td align="right">收款账户号</td>
@@ -168,7 +173,8 @@
         </tr>
         <tr>
             <td align="right">后台跳转地址</td>
-            <td> <input type="text" name="trustBackUrl" value="http://test.trust-one.com/pg/simu_mcht_back_succ_signStr"></td>
+            <td> <input type="text" name="trustBackUrl"
+                        value="http://test.trust-one.com/pg/simu_mcht_back_succ_signStr"></td>
         </tr>
         <tr>
             <td align="right">前台跳转地址</td>
@@ -188,10 +194,11 @@
         </tr>
 		<tr>
             <td align="right">签名</td>
-            <td> <input type="text" name="signature" value="44120035DD82257616B33DB0611BE33BAB1C8D1307A571783110BF275B99ECFE8606A1BD6E247B7BB43AA40FB2E7D4CD246C7594DA15A53BAB78264014A9ADDA5556503A8762858E7D852A84FD7316175BF57991BFB6D59D994313F8B25D74E4B33878630743CAD47A0C71B4AB2C24D0C6ED6C25E8EFD57C9615D63569E485498196C4F1484925FD6F530E2CFA8A6FBA7A912FF8E0E5BEDDAA2F72347D1B21581BEED2DCFD0FC889B7344AD24508ED96C5F2B8A649289FB366F64A268BF24398C894BE805789C8BAA96CFAFF6FAB45E4CF59B3C4C14740B9D2107583BE171B77B273D74FB221D456E0E700A68FD6BD3F923C411D63596CDC0F275EBD6A7E47B3"></td>
+            <td> <input type="text" name="signature"
+                        value="44120035DD82257616B33DB0611BE33BAB1C8D1307A571783110BF275B99ECFE8606A1BD6E247B7BB43AA40FB2E7D4CD246C7594DA15A53BAB78264014A9ADDA5556503A8762858E7D852A84FD7316175BF57991BFB6D59D994313F8B25D74E4B33878630743CAD47A0C71B4AB2C24D0C6ED6C25E8EFD57C9615D63569E485498196C4F1484925FD6F530E2CFA8A6FBA7A912FF8E0E5BEDDAA2F72347D1B21581BEED2DCFD0FC889B7344AD24508ED96C5F2B8A649289FB366F64A268BF24398C894BE805789C8BAA96CFAFF6FAB45E4CF59B3C4C14740B9D2107583BE171B77B273D74FB221D456E0E700A68FD6BD3F923C411D63596CDC0F275EBD6A7E47B3"></td>
         </tr>
-        <tr >
-            <td  colspan="2" align="center" id="submitsignStr"> <input type="submit"  value="支付交易请求"  ></td>
+        <tr>
+            <td colspan="2" align="center" > <input type="submit" value="支付交易请求"></td>
         </tr>
     </table>
 </form>
@@ -199,12 +206,14 @@
                                       
 
 					                      </textarea>
-										 </dd>
-															
-							    	</dl>
-									<dl class="col-md-12 col-xs-12 dl_container">
-                                    	<dt class="pull-left">返回示例:</dt>                                    	                                   	
-                                    	<dd><textarea cols="90" rows="6" style="width: 100%;"><head>
+                                    </dd>
+
+                                </dl>
+                                <dl class="col-md-12 col-xs-12 dl_container">
+                                    <dt class="pull-left">返回示例:</dt>
+                                    <dd>
+                                        <textarea cols="90" rows="6" style="width: 100%;">
+ <html lang="en"><head>
     <meta http-equiv="content-type" content="text/html;charset=Utf-8">
 </head>
 <body onload="document.getElementsignStrByteId('from').submit();">
@@ -241,504 +250,501 @@
 </form>
 
 </body>
-</html></textarea></dd>                                   	                                   	
-                                    </dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">接口支持jar包：</dt>
-							    		<dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
-							    	</dl>
-									
-									
-									<dl class="col-md-12 col-xs-12">							    		
-							    		<div class="table-responsive ">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td colspan="2" align="middle">接口支持jar包常用类简介</td>							    					
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>类名</td>
-							    					<td>说明</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td> SignatureStrUtil</td>	
-							    					<td>用于不同的接口请求数据和响应数据签名串的生成</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureCertificate</td>
-							    					<td>解析pem文件</td>
-							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureData</td>
-							    					<td>用于生成签名</td>
-							    					
-							    				</tr>
-												<tr>
-							    					<td> VerifySignature</td>
-							    					<td>用于验证签名</td>							    					
-							    				</tr>
-																								
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									
-									
-									
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>请求参数说明：</dt>
-							    		<div class="table-responsive search_top">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td>名称</td>
-							    					<td>长度</td>
-							    					<td>必填</td>
-							    					<td>说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>Y</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>Y</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>Y</td>
-							    					<td>交易序号：在一个交易日内始终唯一</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranTime</td>
-							    					<td>6</td>
-							    					<td>Y</td>
-							    					<td>商户的交易时间：HHmmss</td>
-							    				</tr>
-												<tr>
-							    					<td>tranAmt</td>
-							    					<td><=12</td>
-							    					<td>Y</td>
-							    					<td>交易金；单位：分</td>
-							    				</tr>
-							    				<tr>
-							    					<td>bankId</td>
-							    					<td><=5</td>
-							    					<td>N</td>
-							    					<td>银行编号：在前台类交易时填写默认银行代码，支持直接跳转到网银。取值见<a href="#bankList">[标准网管银行列表]</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>orderDesc</td>
-							    					<td><=128</td>
-							    					<td>Y</td>
-							    					<td>订单描述：订单描述不能为空</td>
-							    				</tr>
-							    				<tr>
-							    					<td>gateWayId</td>
-							    					<td>4</td>
-							    					<td>N</td>
-							    					<td>支付网关类型：gateWayId =1004，pc端；gateWayId =1005，手机wap端；gateWayId=1006，手机控件方式，目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>trustBackUrl</td>
-							    					<td><=1000</td>
-							    					<td>Y</td>
-							    					<td>后台通知地址：通知商户交易结果，用于修改订单状态的url。如果商户响应失败，会重发，最多发送次数为5次，每次间隔为10分钟</td>
-							    				</tr>
-												<tr>
-							    					<td>trustFrontUrl</td>
-							    					<td><=1000</td>
-							    					<td>Y</td>
-							    					<td>前台通知地址：即支付成功后返回成功页面的url</td>
-							    				</tr>
-												<tr>
-							    					<td>prodId</td>
-							    					<td><=32</td>
-							    					<td>N</td>
-							    					<td>产品的编号：产品的唯一标识符，目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>prodMemo</td>
-							    					<td><=128</td>
-							    					<td>N</td>
-							    					<td>产品备注：按照产品清算业务的备注，格式{pI=xxx}。注：pI为产品代码，多个参数用逗号隔开，目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>accountId</td>
-							    					<td><=64</td>
-							    					<td>N</td>
-							    					<td>收款账户号：目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>accountName</td>
-							    					<td><=128</td>
-							    					<td>N</td>
-							    					<td>收款账户名：目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>accountBank</td>
-							    					<td><=128</td>
-							    					<td>N</td>
-							    					<td>收款行名称：目前已经过时，不用填写</td>
-							    				</tr>
-												<tr>
-							    					<td>bankCardNo</td>
-							    					<td><=19</td>
-							    					<td>N</td>
-							    					<td>银行卡号：商户指定的支付银行卡号</td>
-							    				</tr>
-												<tr>
-							    					<td>signature</td>
-							    					<td><=1000</td>
-							    					<td>Y</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>商户后台返回参数列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width: 15%;">名称</td>
-							    					<td style="width: 15%;">长度</td>
-							    					<td style="width: 70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易流水号：商户的交易流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
-							    				</tr>
-												<tr>
-							    					<td>settleDate</td>
-							    					<td>8</td>
-							    					<td>清算日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>quota</td>
-							    					<td><=10</td>
-							    					<td>剩余额度</td>
-							    				</tr>
-							    				<tr>
-							    					<td>respCode</td>
-							    					<td>2</td>
-							    					<td>响应码：<a href="javascript:jumpToRespAPI();" >见api响应码</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>respMsg</td>
-							    					<td><=128</td>
-							    					<td>响应描述</td>
-							    				</tr>
-							    				<tr>
-							    					<td>signature</td>
-							    					<td><=128</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									<dl class="col-md-12 col-xs-12">
-							    		<dt>商户前台返回参数列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width: 15%;">名称</td>
-							    					<td style="width: 15%;">长度     </td>
-							    					<td style="width: 70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易流水号：商户的交易流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
-							    				</tr>
-												<tr>
-							    					<td>settleDate</td>
-							    					<td>8</td>
-							    					<td>清算日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>quota</td>
-							    					<td><=10</td>
-							    					<td>剩余额度</td>
-							    				</tr>
-							    				<tr>
-							    					<td>respCode</td>
-							    					<td>2</td>
-							    					<td>响应码：<a href="javascript:jumpToRespAPI();" >见api响应码</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>respMsg</td>
-							    					<td><=128</td>
-							    					<td>响应描述</td>
-							    				</tr>
-							    				<tr>
-							    					<td>signature</td>
-							    					<td><=128</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
+</html></textarea>
+                                    </dd>
+</dl>
+<dl class="col-md-12 col-xs-12">
+    <dt class="pull-left">接口支持jar包：</dt>
+    <dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
+</dl>
 
 
+<dl class="col-md-12 col-xs-12">
+    <div class="table-responsive ">
+        <table class="table panel panel-default table_thead">
+            <thead>
+            <tr>
+                <td colspan="2" align="middle">接口支持jar包常用类简介</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>类名</td>
+                <td>说明</td>
+            </tr>
+            <tr>
+                <td> SignatureStrUtil</td>
+                <td>用于不同的接口请求数据和响应数据签名串的生成</td>
+            </tr>
+            <tr>
+                <td>SignatureCertificate</td>
+                <td>解析pem文件</td>
 
-									<dl class="col-md-12 col-xs-12">
-							    		<dt>借记卡网关银行列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width: 30%;">银行简码</td>
-							    					<td style="width: 70%;">银行名称</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>ICBCD</td>
-							    					<td>工商银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>ABCD</td>
-							    					<td>农业银行</td>
-							    				</tr>
-												<tr>
-							    					<td>CCBD</td>
-							    					<td>建设银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CMBD</td>
-							    					<td>招商银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>SPDB</td>
-							    					<td>上海浦东发展银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>GDBD</td>
-							    					<td>广发银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CMBCD</td>
-							    					<td>民生银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CEBD</td>
-							    					<td>光大银行</td>
-							    				</tr>
-												<tr>
-							    					<td>HXBD</td>
-							    					<td>华夏银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>PSBCD</td>
-							    					<td>邮政储蓄</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BOEAD</td>
-							    					<td>东亚银行</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
+            </tr>
+            <tr>
+                <td>SignatureData</td>
+                <td>用于生成签名</td>
+
+            </tr>
+            <tr>
+                <td> VerifySignature</td>
+                <td>用于验证签名</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</dl>
 
 
+<dl class="col-md-12 col-xs-12">
+    <dt>请求参数说明：</dt>
+    <div class="table-responsive search_top">
+        <table class="table panel panel-default table_thead">
+            <thead>
+            <tr>
+                <td>名称</td>
+                <td>长度</td>
+                <td>必填</td>
+                <td>说明</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchId</td>
+                <td>6</td>
+                <td>Y</td>
+                <td>商户编号</td>
+            </tr>
+            <tr>
+                <td>tranDate</td>
+                <td>8</td>
+                <td>Y</td>
+                <td>商户交易的日期：YYYYMMDD</td>
+            </tr>
+            <tr>
+                <td>tranId</td>
+                <td><=32</td>
+                <td>Y</td>
+                <td>交易序号：在一个交易日内始终唯一</td>
+            </tr>
+            <tr>
+                <td>tranTime</td>
+                <td>6</td>
+                <td>Y</td>
+                <td>商户的交易时间：HHmmss</td>
+            </tr>
+            <tr>
+                <td>tranAmt</td>
+                <td><=12</td>
+                <td>Y</td>
+                <td>交易金；单位：分</td>
+            </tr>
+            <tr>
+                <td>bankId</td>
+                <td><=5</td>
+                <td>N</td>
+                <td>银行编号：在前台类交易时填写默认银行代码，支持直接跳转到网银。取值见<a href="#bankList">[标准网管银行列表]</a></td>
+            </tr>
+            <tr>
+                <td>orderDesc</td>
+                <td><=128</td>
+                <td>Y</td>
+                <td>订单描述：订单描述不能为空</td>
+            </tr>
+            <tr>
+                <td>gateWayId</td>
+                <td>4</td>
+                <td>N</td>
+                <td>支付网关类型：gateWayId =1004，pc端；gateWayId =1005，手机wap端；gateWayId=1006，手机控件方式，目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>trustBackUrl</td>
+                <td><=1000</td>
+                <td>Y</td>
+                <td>后台通知地址：通知商户交易结果，用于修改订单状态的url。如果商户响应失败，会重发，最多发送次数为5次，每次间隔为10分钟</td>
+            </tr>
+            <tr>
+                <td>trustFrontUrl</td>
+                <td><=1000</td>
+                <td>Y</td>
+                <td>前台通知地址：即支付成功后返回成功页面的url</td>
+            </tr>
+            <tr>
+                <td>prodId</td>
+                <td><=32</td>
+                <td>N</td>
+                <td>产品的编号：产品的唯一标识符，目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>prodMemo</td>
+                <td><=128</td>
+                <td>N</td>
+                <td>产品备注：按照产品清算业务的备注，格式{pI=xxx}。注：pI为产品代码，多个参数用逗号隔开，目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>accountId</td>
+                <td><=64</td>
+                <td>N</td>
+                <td>收款账户号：目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>accountName</td>
+                <td><=128</td>
+                <td>N</td>
+                <td>收款账户名：目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>accountBank</td>
+                <td><=128</td>
+                <td>N</td>
+                <td>收款行名称：目前已经过时，不用填写</td>
+            </tr>
+            <tr>
+                <td>bankCardNo</td>
+                <td><=19</td>
+                <td>N</td>
+                <td>银行卡号：商户指定的支付银行卡号</td>
+            </tr>
+            <tr>
+                <td>signature</td>
+                <td><=1000</td>
+                <td>Y</td>
+                <td>签名</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
+<dl class="col-md-12 col-xs-12">
+    <dt>商户后台返回参数列表：</dt>
+    <div class="table-responsive  search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width: 15%;">名称</td>
+                <td style="width: 15%;">长度</td>
+                <td style="width: 70%;">说明</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchId</td>
+                <td>6</td>
+                <td>商户编号</td>
+            </tr>
+            <tr>
+                <td>tranDate</td>
+                <td>8</td>
+                <td>商户交易的日期：YYYYMMDD</td>
+            </tr>
+            <tr>
+                <td>tranId</td>
+                <td><=32</td>
+                <td>交易流水号：商户的交易流水号</td>
+            </tr>
+            <tr>
+                <td>queryId</td>
+                <td><=32</td>
+                <td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
+            </tr>
+            <tr>
+                <td>settleDate</td>
+                <td>8</td>
+                <td>清算日期：YYYYMMDD</td>
+            </tr>
+            <tr>
+                <td>quota</td>
+                <td><=10</td>
+                <td>剩余额度</td>
+            </tr>
+            <tr>
+                <td>respCode</td>
+                <td>2</td>
+                <td>响应码：<a href="javascript:jumpToRespAPI();">见api响应码</a></td>
+            </tr>
+            <tr>
+                <td>respMsg</td>
+                <td><=128</td>
+                <td>响应描述</td>
+            </tr>
+            <tr>
+                <td>signature</td>
+                <td><=128</td>
+                <td>签名</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
+<dl class="col-md-12 col-xs-12">
+    <dt>商户前台返回参数列表：</dt>
+    <div class="table-responsive  search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width: 15%;">名称</td>
+                <td style="width: 15%;">长度</td>
+                <td style="width: 70%;">说明</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchId</td>
+                <td>6</td>
+                <td>商户编号</td>
+            </tr>
+            <tr>
+                <td>tranDate</td>
+                <td>8</td>
+                <td>商户交易的日期：YYYYMMDD</td>
+            </tr>
+            <tr>
+                <td>tranId</td>
+                <td><=32</td>
+                <td>交易流水号：商户的交易流水号</td>
+            </tr>
+            <tr>
+                <td>queryId</td>
+                <td><=32</td>
+                <td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
+            </tr>
+            <tr>
+                <td>settleDate</td>
+                <td>8</td>
+                <td>清算日期：YYYYMMDD</td>
+            </tr>
+            <tr>
+                <td>quota</td>
+                <td><=10</td>
+                <td>剩余额度</td>
+            </tr>
+            <tr>
+                <td>respCode</td>
+                <td>2</td>
+                <td>响应码：<a href="javascript:jumpToRespAPI();">见api响应码</a></td>
+            </tr>
+            <tr>
+                <td>respMsg</td>
+                <td><=128</td>
+                <td>响应描述</td>
+            </tr>
+            <tr>
+                <td>signature</td>
+                <td><=128</td>
+                <td>签名</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
 
 
-									<dl class="col-md-12 col-xs-12">
-							    		<dt id="bankList">标准网关银行列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width: 30%;">银行简码</td>
-							    					<td style="width: 70%;">银行名称</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>ICBC</td>
-							    					<td>工商银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>ABC</td>
-							    					<td>农业银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BOC</td>
-							    					<td>中国银行（大额）</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BOCSH</td>
-							    					<td>中国银行</td>
-							    				</tr>
-												<tr>
-							    					<td>CCB</td>
-							    					<td>建设银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CMB</td>
-							    					<td>招商银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>SPDB</td>
-							    					<td>上海浦东发展银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>GDB</td>
-							    					<td>广发银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BOCOM</td>
-							    					<td>交通银行</td>
-							    				</tr>
-												 <tr>
-							    					<td>CNCB</td>
-							    					<td>中信银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CMBC</td>
-							    					<td>民生银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CIB</td>
-							    					<td>兴业银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>CEB</td>
-							    					<td>光大银行</td>
-							    				</tr>
-												<tr>
-							    					<td>HXB</td>
-							    					<td>华夏银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BOS</td>
-							    					<td>上海银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>SPCB</td>
-							    					<td>上海农商银行</td>
-							    				</tr>
-							    				<tr>
-							    					<td>PSBC</td>
-							    					<td>邮政储蓄</td>
-							    				</tr>
-							    				<tr>
-							    					<td>BCCB</td>
-							    					<td>北京银行</td>
-							    				</tr>
-												<tr>
-							    					<td>BRCB</td>
-							    					<td>北京农商</td>
-							    				</tr>
-							    				<tr>
-							    					<td>PAB</td>
-							    					<td>平安银行</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									<dl class="col-md-12 col-xs-12">
-								          <strong>完整教学代码示例：</strong>
-								          <div class="table-responsive search_top">
-								            <table class="table panel panel-default">
-	                            	          <thead>
-	                            		        <tr>
-	                            			      <td style="width: 30%;">语言</td>
-	                            			      <td style="width: 70%;">标题</td>
-	                            		         </tr>
-	                            	          </thead>
-	                            	          <tbody>
-	                            		        <tr>
-	                            			      <td>java</td>
-	                            			      <td><a href="onlinePay_code.html">在线支付接口调用示例</a></td>
-	                            		        </tr>
-	                            	          </tbody>
-	                                        </table>
-							              </div>
-									</dl>
-							    </div>
-							</div>
-  <!----------------------------------------------第二部分：查询交易相关内容-------------------------------------------------------------------------->
-                           <div class="tab-pane " id="queryapi">
-							    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
-							    	<p>
-							    	   <span class="glyphicon glyphicon-triangle-right"></span>
-							    	   <a href="" class="nav_h">在线查询</a>
-							    	</p>
-							    </div>
-							    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-								
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">接口地址：</dt>
-							    		<dd>测试：http://tpay.trust-one.com/pg/query</dd>							    		
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">支持格式：</dt>
-							    		<dd class="pull-left">http post请求且Content-Type: application/x-www-form-urlencoded;charset=utf-8格式</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">请求方式：</dt>
-							    		<dd class="pull-left">http post</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">请求示例：</dt>
-							    		<dd>
+<dl class="col-md-12 col-xs-12">
+    <dt>借记卡网关银行列表：</dt>
+    <div class="table-responsive  search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width: 30%;">银行简码</td>
+                <td style="width: 70%;">银行名称</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ICBCD</td>
+                <td>工商银行</td>
+            </tr>
+            <tr>
+                <td>ABCD</td>
+                <td>农业银行</td>
+            </tr>
+            <tr>
+                <td>CCBD</td>
+                <td>建设银行</td>
+            </tr>
+            <tr>
+                <td>CMBD</td>
+                <td>招商银行</td>
+            </tr>
+            <tr>
+                <td>SPDB</td>
+                <td>上海浦东发展银行</td>
+            </tr>
+            <tr>
+                <td>GDBD</td>
+                <td>广发银行</td>
+            </tr>
+            <tr>
+                <td>CMBCD</td>
+                <td>民生银行</td>
+            </tr>
+            <tr>
+                <td>CEBD</td>
+                <td>光大银行</td>
+            </tr>
+            <tr>
+                <td>HXBD</td>
+                <td>华夏银行</td>
+            </tr>
+            <tr>
+                <td>PSBCD</td>
+                <td>邮政储蓄</td>
+            </tr>
+            <tr>
+                <td>BOEAD</td>
+                <td>东亚银行</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
+
+
+<dl class="col-md-12 col-xs-12">
+    <dt id="bankList">标准网关银行列表：</dt>
+    <div class="table-responsive  search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width: 30%;">银行简码</td>
+                <td style="width: 70%;">银行名称</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ICBC</td>
+                <td>工商银行</td>
+            </tr>
+            <tr>
+                <td>ABC</td>
+                <td>农业银行</td>
+            </tr>
+            <tr>
+                <td>BOC</td>
+                <td>中国银行（大额）</td>
+            </tr>
+            <tr>
+                <td>BOCSH</td>
+                <td>中国银行</td>
+            </tr>
+            <tr>
+                <td>CCB</td>
+                <td>建设银行</td>
+            </tr>
+            <tr>
+                <td>CMB</td>
+                <td>招商银行</td>
+            </tr>
+            <tr>
+                <td>SPDB</td>
+                <td>上海浦东发展银行</td>
+            </tr>
+            <tr>
+                <td>GDB</td>
+                <td>广发银行</td>
+            </tr>
+            <tr>
+                <td>BOCOM</td>
+                <td>交通银行</td>
+            </tr>
+            <tr>
+                <td>CNCB</td>
+                <td>中信银行</td>
+            </tr>
+            <tr>
+                <td>CMBC</td>
+                <td>民生银行</td>
+            </tr>
+            <tr>
+                <td>CIB</td>
+                <td>兴业银行</td>
+            </tr>
+            <tr>
+                <td>CEB</td>
+                <td>光大银行</td>
+            </tr>
+            <tr>
+                <td>HXB</td>
+                <td>华夏银行</td>
+            </tr>
+            <tr>
+                <td>BOS</td>
+                <td>上海银行</td>
+            </tr>
+            <tr>
+                <td>SPCB</td>
+                <td>上海农商银行</td>
+            </tr>
+            <tr>
+                <td>PSBC</td>
+                <td>邮政储蓄</td>
+            </tr>
+            <tr>
+                <td>BCCB</td>
+                <td>北京银行</td>
+            </tr>
+            <tr>
+                <td>BRCB</td>
+                <td>北京农商</td>
+            </tr>
+            <tr>
+                <td>PAB</td>
+                <td>平安银行</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
+<dl class="col-md-12 col-xs-12">
+    <strong>完整教学代码示例：</strong>
+    <div class="table-responsive search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width: 30%;">语言</td>
+                <td style="width: 70%;">标题</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>java</td>
+                <td><a href="onlinePay_code.html">在线支付接口调用示例</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</dl>
+</div>
+</div>
+<!----------------------------------------------第二部分：查询交易相关内容-------------------------------------------------------------------------->
+<div class="tab-pane " id="queryapi">
+    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
+        <p>
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <a href="" class="nav_h">在线查询</a>
+        </p>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">接口地址：</dt>
+            <dd>测试：http://tpay.trust-one.com/pg/query</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">支持格式：</dt>
+            <dd class="pull-left">http post请求且Content-Type: application/x-www-form-urlencoded;charset=utf-8格式</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">请求方式：</dt>
+            <dd class="pull-left">http post</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">请求示例：</dt>
+            <dd>
 										    <textarea cols="90" rows="6" style="width:100%;">
 
-<form action="http://tpay.trust-one.com/pg/query" id="bankcard" method="post" >
+<form action="http://tpay.trust-one.com/pg/query" id="bankcard" method="post">
     <table>
         <tr>
             <td align="right">商户号</td>
@@ -746,15 +752,15 @@
         </tr>
         <tr>
             <td align="right">交易日期</td>
-            <td> <input type="text" name="tranDate" value="20170413" ></td>
+            <td> <input type="text" name="tranDate" value="20170413"></td>
         </tr>
         <tr>
             <td align="right">交易流水号</td>
-            <td> <input type="text" name="tranId" value="1492064650123" ></td>
+            <td> <input type="text" name="tranId" value="1492064650123"></td>
         </tr>
         <tr>
             <td align="right">交易时间</td>
-            <td><input type="text" name="tranTime" value="142410" ></td>
+            <td><input type="text" name="tranTime" value="142410"></td>
         </tr>
         
         <tr>
@@ -771,273 +777,273 @@
         </tr>
 		<tr>
             <td align="right">签名</td>
-            <td> <input type="text" name="signature" value="1BB19DD00A3C8A92EFB4CD318AC62164CDA4CF4EDA7C25AD5512C44C5D4E843DECD8A2B8318F4E3616E5A0F55424844C099009AE16F4066BB50A1B16EA841147C69C466CB201E86535A54C15570CE3E7AD055ABA725FE0E64D582C362B51923D4E9400C21C8B3D100825773373A2E37415A31C0514BB7AC6147DC21F5E0C1095C1FB41306106D267998F1AE1A08C81CB144CC4149B9B63BD005554D7D058699DC3D14D41814F59FEFF38DB492BF82A3F5E1C269A94FAED5ACA5AA3CEB6248285F3EA813B8CE603E08B48F5119A533D77B9155CABA5C19172B947F535530AB10EA3D814CEE754AFC301F9480390FD6B4EC2BD7BF5D75069C0CA359FE3777A9A18"></td>
+            <td> <input type="text" name="signature"
+                        value="1BB19DD00A3C8A92EFB4CD318AC62164CDA4CF4EDA7C25AD5512C44C5D4E843DECD8A2B8318F4E3616E5A0F55424844C099009AE16F4066BB50A1B16EA841147C69C466CB201E86535A54C15570CE3E7AD055ABA725FE0E64D582C362B51923D4E9400C21C8B3D100825773373A2E37415A31C0514BB7AC6147DC21F5E0C1095C1FB41306106D267998F1AE1A08C81CB144CC4149B9B63BD005554D7D058699DC3D14D41814F59FEFF38DB492BF82A3F5E1C269A94FAED5ACA5AA3CEB6248285F3EA813B8CE603E08B48F5119A533D77B9155CABA5C19172B947F535530AB10EA3D814CEE754AFC301F9480390FD6B4EC2BD7BF5D75069C0CA359FE3777A9A18"></td>
         </tr>
-        <tr >
-            <td  colspan="2" align="center" id="submitsignStr"> <input type="submit"  value="支付结果在线查询"  ></td>
+        <tr>
+            <td colspan="2" align="center" > <input type="submit" value="支付结果在线查询"></td>
         </tr>
     </table>
 </form>
 
 					                        </textarea>
-										</dd>
-					              
-										
-							    	</dl>
-									 <dl class="col-md-12 col-xs-12 dl_container">
-                                    	<dt class="pull-left">返回示例:</dt>                                   	                                                          		
-                                                               		
-										<dd><textarea cols="90" rows="6" style="width:100%;">signature=4883C0322E10B17031372B97F25B9A4E9FBB8508E2B8CCA35A01A4C01B98434B509C3094B8F224F5A6E84A982360BD78A715B1C6F9CD226D4C8B06E70DB6895AFF3575E4F6E35BDA58D54C9F140A0BFE70DD1FFA33AF67B35267B5C2E9F8FD1248E1D870F9B67DF8932D002B2B265E488C796904EA55F352A392F25F55C24945DDD4E779116CCCF3EFDA8F769C1DDE0446B0117F2A43FA5AEE37B1326D1D570F9F24BB130FE7D24E5D5237EB07AF1B72329EE6CAEC8F8D9894482A98A7764392DAA205F8CE58E4AB70A20A93B77E74A794589CD14C864189F79F0F13B83934B0CD63A2259F73625A328FB4773A40BBAA1B2A0E763BC710CD691BBD2904A2401F&merchId=000001&tranDate=20170413&tranId=1492064650123&tranTime=142410&tranAmt=100&origTranDate=20170404&origTranId=1491299064263&quota=0&respCode=00&respMsg=success</textarea></dd>
-                                    	
-                                    	
-                                    </dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">接口支持jar包：</dt>
-							    		<dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
-							    	</dl>
-									
-									
-									<dl class="col-md-12 col-xs-12">							    		
-							    		<div class="table-responsive ">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td colspan="2" align="middle">接口支持jar包常用类简介</td>							    					
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>类名</td>
-							    					<td>说明</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td> SignatureStrUtil</td>	
-							    					<td>用于不同的接口请求数据和响应数据签名串的生成</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureCertificate</td>
-							    					<td>解析pem文件</td>
-							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureData</td>
-							    					<td>用于生成签名</td>
-							    					
-							    				</tr>
-												<tr>
-							    					<td> VerifySignature</td>
-							    					<td>用于验证签名</td>							    					
-							    				</tr>
-																								
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									
-									
-									
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>请求参数说明：</dt>
-							    		<div class="table-responsive search_top">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td>名称</td>
-							    					<td>长度</td>
-							    					<td>必填</td>
-							    					<td>说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>							    			
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>Y</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>Y</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><32</td>
-							    					<td>Y</td>
-							    					<td>交易序号：在一个交易日内始终唯一</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranTime</td>
-							    					<td>6</td>
-							    					<td>Y</td>
-							    					<td>商户的交易时间：HHmmss</td>
-							    				</tr>
-												<tr>
-							    					<td>origTranDate</td>
-							    					<td>8</td>
-							    					<td>N</td>
-							    					<td>原交易日期：YYYYMMDD（被查询的交易的交易日期），如果交易查询流水号不送时，该域必须送</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origTranId</td>
-							    					<td><=32</td>
-							    					<td>N</td>
-							    					<td>原交易流水号：被查询的交易的商户流水号，如果交易查询流水号不送时，该域必须送</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>N</td>
-							    					<td>交易查询流水号：待查询的交易流水号。如果是原交易日期，交易流水号不送时，该域必须送</td>
-							    				</tr>
-												
-												<tr>
-							    					<td>signature</td>
-							    					<td><=1000</td>
-							    					<td>Y</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>返回参数列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易流水号：商户端产生的交易流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
-							    				</tr>
-												<tr>
-							    					<td>tranAmt</td>
-							    					<td><=12</td>
-							    					<td>交易金额：单位：分(查询交易成功时返回)</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origTranDate</td>
-							    					<td>8</td>
-							    					<td>原交易日期：YYYYMMDD(请求报文中有则返回)</td>
-							    				</tr>
-												<tr>
-							    					<td>origTranId</td>
-							    					<td><=32</td>
-							    					<td>原交易流水号：原交易流水号(请求报文中有则返回)</td>
-							    				</tr>
-												<tr>
-							    					<td>settleDate</td>
-							    					<td>8</td>
-							    					<td>清算日期：YYYYMMDD(查询交易成功时返回)</td>
-							    				</tr>
-												<tr>
-							    					<td>origRespCode</td>
-							    					<td>2</td>
-							    					<td>原交易响应码：查询交易成功时返回</td>
-							    				</tr>
-												<tr>
-							    					<td>origRespMsg	</td>
-							    					<td><=128</td>
-							    					<td>响应描述：查询交易成功时返回</td>
-							    				</tr>
-												<tr>
-							    					<td>quota</td>
-							    					<td><=10</td>
-							    					<td>剩余额度</td>
-							    				</tr>
-							    				<tr>
-							    					<td>respCode</td>
-							    					<td>2</td>
-							    					<td>响应码：<a href="javascript:jumpToRespAPI();" >见api响应码</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>respMsg</td>
-							    					<td><=128</td>
-							    					<td>响应描述</td>
-							    				</tr>
-							    				<tr>
-							    					<td>signature</td>
-							    					<td><=128</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									<dl class="col-md-12 col-xs-12">
-								          <strong>完整教学代码示例：</strong>
-								          <div class="table-responsive search_top">
-								            <table class="table panel panel-default">
-	                            	          <thead>
-	                            		        <tr>
-	                            			      <td style="width:30%;">语言</td>
-	                            			      <td style="width:70%;">标题</td>
-	                            		         </tr>
-	                            	          </thead>
-	                            	          <tbody>
-	                            		        <tr>
-	                            			      <td>java</td>
-	                            			      <td><a href="onlineQuery_code.html">在线查询接口调用示例</a></td>
-	                            		        </tr>
-	                            	          </tbody>
-	                                        </table>
-							              </div>
-									</dl>
-                                 
-							    </div>
-							</div>
+            </dd>
 
 
+        </dl>
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">返回示例:</dt>
 
-  <!----------------------------------------------第三部分：退货交易相关内容-------------------------------------------------------------------------->
-  							<div class="tab-pane " id="refundapi">
-							    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
-							    	<p>
-							    	   <span class="glyphicon glyphicon-triangle-right"></span>
-							    	   <a href="" class="nav_h">在线退货</a>
-							    	</p>
-							    </div>
-							    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">接口地址：</dt>
-							    		<dd>测试：http://tpay.trust-one.com/pg/refund</dd>							    	
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">支持格式：</dt>
-							    		<dd class="pull-left">http post请求且Content-Type: application/x-www-form-urlencoded;charset=utf-8格式</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">请求方式：</dt>
-							    		<dd class="pull-left">标准http post</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">请求示例：</dt>
-							    		<dd>
+            <dd><textarea cols="90" rows="6" style="width:100%;">signature=4883C0322E10B17031372B97F25B9A4E9FBB8508E2B8CCA35A01A4C01B98434B509C3094B8F224F5A6E84A982360BD78A715B1C6F9CD226D4C8B06E70DB6895AFF3575E4F6E35BDA58D54C9F140A0BFE70DD1FFA33AF67B35267B5C2E9F8FD1248E1D870F9B67DF8932D002B2B265E488C796904EA55F352A392F25F55C24945DDD4E779116CCCF3EFDA8F769C1DDE0446B0117F2A43FA5AEE37B1326D1D570F9F24BB130FE7D24E5D5237EB07AF1B72329EE6CAEC8F8D9894482A98A7764392DAA205F8CE58E4AB70A20A93B77E74A794589CD14C864189F79F0F13B83934B0CD63A2259F73625A328FB4773A40BBAA1B2A0E763BC710CD691BBD2904A2401F&merchId=000001&tranDate=20170413&tranId=1492064650123&tranTime=142410&tranAmt=100&origTranDate=20170404&origTranId=1491299064263&quota=0&respCode=00&respMsg=success</textarea>
+            </dd>
+
+
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">接口支持jar包：</dt>
+            <dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <div class="table-responsive ">
+                <table class="table panel panel-default table_thead">
+                    <thead>
+                    <tr>
+                        <td colspan="2" align="middle">接口支持jar包常用类简介</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>类名</td>
+                        <td>说明</td>
+                    </tr>
+                    <tr>
+                        <td> SignatureStrUtil</td>
+                        <td>用于不同的接口请求数据和响应数据签名串的生成</td>
+                    </tr>
+                    <tr>
+                        <td>SignatureCertificate</td>
+                        <td>解析pem文件</td>
+
+                    </tr>
+                    <tr>
+                        <td>SignatureData</td>
+                        <td>用于生成签名</td>
+
+                    </tr>
+                    <tr>
+                        <td> VerifySignature</td>
+                        <td>用于验证签名</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <dt>请求参数说明：</dt>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default table_thead">
+                    <thead>
+                    <tr>
+                        <td>名称</td>
+                        <td>长度</td>
+                        <td>必填</td>
+                        <td>说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <td>merchId</td>
+                    <td>6</td>
+                    <td>Y</td>
+                    <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>Y</td>
+                        <td>商户交易的日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><32</td>
+                        <td>Y</td>
+                        <td>交易序号：在一个交易日内始终唯一</td>
+                    </tr>
+                    <tr>
+                        <td>tranTime</td>
+                        <td>6</td>
+                        <td>Y</td>
+                        <td>商户的交易时间：HHmmss</td>
+                    </tr>
+                    <tr>
+                        <td>origTranDate</td>
+                        <td>8</td>
+                        <td>N</td>
+                        <td>原交易日期：YYYYMMDD（被查询的交易的交易日期），如果交易查询流水号不送时，该域必须送</td>
+                    </tr>
+                    <tr>
+                        <td>origTranId</td>
+                        <td><=32</td>
+                        <td>N</td>
+                        <td>原交易流水号：被查询的交易的商户流水号，如果交易查询流水号不送时，该域必须送</td>
+                    </tr>
+                    <tr>
+                        <td>queryId</td>
+                        <td><=32</td>
+                        <td>N</td>
+                        <td>交易查询流水号：待查询的交易流水号。如果是原交易日期，交易流水号不送时，该域必须送</td>
+                    </tr>
+
+                    <tr>
+                        <td>signature</td>
+                        <td><=1000</td>
+                        <td>Y</td>
+                        <td>签名</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt>返回参数列表：</dt>
+            <div class="table-responsive  search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>merchId</td>
+                        <td>6</td>
+                        <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>商户交易的日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><=32</td>
+                        <td>交易流水号：商户端产生的交易流水号</td>
+                    </tr>
+                    <tr>
+                        <td>queryId</td>
+                        <td><=32</td>
+                        <td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
+                    </tr>
+                    <tr>
+                        <td>tranAmt</td>
+                        <td><=12</td>
+                        <td>交易金额：单位：分(查询交易成功时返回)</td>
+                    </tr>
+                    <tr>
+                        <td>origTranDate</td>
+                        <td>8</td>
+                        <td>原交易日期：YYYYMMDD(请求报文中有则返回)</td>
+                    </tr>
+                    <tr>
+                        <td>origTranId</td>
+                        <td><=32</td>
+                        <td>原交易流水号：原交易流水号(请求报文中有则返回)</td>
+                    </tr>
+                    <tr>
+                        <td>settleDate</td>
+                        <td>8</td>
+                        <td>清算日期：YYYYMMDD(查询交易成功时返回)</td>
+                    </tr>
+                    <tr>
+                        <td>origRespCode</td>
+                        <td>2</td>
+                        <td>原交易响应码：查询交易成功时返回</td>
+                    </tr>
+                    <tr>
+                        <td>origRespMsg</td>
+                        <td><=128</td>
+                        <td>响应描述：查询交易成功时返回</td>
+                    </tr>
+                    <tr>
+                        <td>quota</td>
+                        <td><=10</td>
+                        <td>剩余额度</td>
+                    </tr>
+                    <tr>
+                        <td>respCode</td>
+                        <td>2</td>
+                        <td>响应码：<a href="javascript:jumpToRespAPI();">见api响应码</a></td>
+                    </tr>
+                    <tr>
+                        <td>respMsg</td>
+                        <td><=128</td>
+                        <td>响应描述</td>
+                    </tr>
+                    <tr>
+                        <td>signature</td>
+                        <td><=128</td>
+                        <td>签名</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <strong>完整教学代码示例：</strong>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:30%;">语言</td>
+                        <td style="width:70%;">标题</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>java</td>
+                        <td><a href="onlineQuery_code.html">在线查询接口调用示例</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+
+    </div>
+</div>
+
+
+<!----------------------------------------------第三部分：退货交易相关内容-------------------------------------------------------------------------->
+<div class="tab-pane " id="refundapi">
+    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
+        <p>
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <a href="" class="nav_h">在线退货</a>
+        </p>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">接口地址：</dt>
+            <dd>测试：http://tpay.trust-one.com/pg/refund</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">支持格式：</dt>
+            <dd class="pull-left">http post请求且Content-Type: application/x-www-form-urlencoded;charset=utf-8格式</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">请求方式：</dt>
+            <dd class="pull-left">标准http post</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">请求示例：</dt>
+            <dd>
 										  <textarea cols="90" rows="6" style="width:100%;">
-<form action="http://tpay.trust-one.com/pg/refund" id="bankcard" method="post" >
+<form action="http://tpay.trust-one.com/pg/refund" method="post">
     <table>
         <tr>
             <td align="right">商户号</td>
@@ -1045,15 +1051,15 @@
         </tr>
         <tr>
             <td align="right">交易日期</td>
-            <td> <input type="text" name="tranDate" value="20170415" ></td>
+            <td> <input type="text" name="tranDate" value="20170415"></td>
         </tr>
         <tr>
             <td align="right">交易流水号</td>
-            <td> <input type="text" name="tranId" value="1492248986644" ></td>
+            <td> <input type="text" name="tranId" value="1492248986644"></td>
         </tr>
         <tr>
             <td align="right">交易时间</td>
-            <td><input type="text" name="tranTime" value="173626" ></td>
+            <td><input type="text" name="tranTime" value="173626"></td>
         </tr>
         
         <tr>
@@ -1074,535 +1080,535 @@
         </tr>
 		 <tr>
             <td align="right">后台通知地址</td>
-            <td> <input type="text" name="trustBackUrl" value="http://127.0.0.1:8080/trust-gateway/pay/payFrontResp"></td>
+            <td> <input type="text" name="trustBackUrl"
+                        value="http://127.0.0.1:8080/trust-gateway/pay/payFrontResp"></td>
         </tr>
 		<tr>
             <td align="right">签名</td>
-            <td> <input type="text" name="signature" value="9656125BBB4B887AA92916520F00FE722F65B9C099A21BC8A4A8F7EC103494934E020C63A5222359E479E9AA1C8436A278FA81E7EC1F547E5D535C6BDA79DBDEC2282246C48C1A682FB859B69E599CE2D84F8BD67305DE4826E31285124C02B1E8F9A13C590DFF3FC6540FC24F8461DF588FC3DC8853978CB0E1B83A29785EEEF239E6AB611DF05540383FA5890AE83658FCAA2C866A5C68AED3ACB78DEA98794E4116F2C089E71B001CE195561DE204844C35349176674B40AD74EE50C739495741FF2053BFA052DECAEC573D40619C3F981B9FDBC7DC5011343C99098F2D019EB906999C8DCC5793583580275C26374578E0F820325C995B14736123761B73"></td>
+            <td> <input type="text" name="signature"
+                        value="9656125BBB4B887AA92916520F00FE722F65B9C099A21BC8A4A8F7EC103494934E020C63A5222359E479E9AA1C8436A278FA81E7EC1F547E5D535C6BDA79DBDEC2282246C48C1A682FB859B69E599CE2D84F8BD67305DE4826E31285124C02B1E8F9A13C590DFF3FC6540FC24F8461DF588FC3DC8853978CB0E1B83A29785EEEF239E6AB611DF05540383FA5890AE83658FCAA2C866A5C68AED3ACB78DEA98794E4116F2C089E71B001CE195561DE204844C35349176674B40AD74EE50C739495741FF2053BFA052DECAEC573D40619C3F981B9FDBC7DC5011343C99098F2D019EB906999C8DCC5793583580275C26374578E0F820325C995B14736123761B73"></td>
         </tr>
-        <tr >
-            <td  colspan="2" align="center" id="submitsignStr"> <input type="submit"  value="退货"  ></td>
+        <tr>
+            <td colspan="2" align="center" id="submitsignStr"> <input type="submit" value="退货"></td>
         </tr>
     </table>
 </form>
 
 
 					</textarea></dd>
-							    	</dl>
-									<dl class="col-md-12 col-xs-12 dl_container">
-                                    	<dt class="pull-left">返回示例:</dt>                                   	                            
-                                    	<dd><textarea cols="90" rows="6" style="width:100%;">signature=86CFF2EC8FEF1BA7E0EEF63EB20772B2C5D5BA7ABCED4512AA194740D008F6D397B4C363D54F40198A26CE5E8EA66D48E53273252ADEA4D88D1E8A2EF0C027877B3AED7E408C56BEB901BA58A944B35DBE0C5A44AE79BFD10FE82D610007247695BDD9F7AA84901443DD34D833205EE1842FB04F2C33853C36E299E88B7654FA9CF3D92C1EA9F7D7896349B4CB74405A86B545E6A1E2017129434C767D78F69DC69648189275B85775220D57C031DECA0C98699A6080F5E662A58F800E1C12C9E069064616023A24594DEC49ACD803B0FBE8DAE35ACC80158D711458BC78402D43D2F04877682C0CE5908AB3E73297F256B67AEDCEF77247CBEA5D21681D151B&merchId=000001&tranDate=20170415&tranId=1492248986644&tranTime=173626&origTranDate=20170414&origTranId=1492162863881&origQueryId=20170414174301712179944&tranAmt=1&trustBackUrl=http%3A%2F%2F127.0.0.1%3A8080%2Ftrust-gateway%2Fpay%2FpayFrontResp&respCode=05&respMsg=退货交易成功受理</textarea></dd>                                    
-                                    </dl>
-									 
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">接口支持jar包：</dt>
-							    		<dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
-							    	</dl>
-									
-									
-									<dl class="col-md-12 col-xs-12">							    		
-							    		<div class="table-responsive ">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td colspan="2" align="middle">接口支持jar包常用类简介</td>							    					
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>类名</td>
-							    					<td>说明</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td> SignatureStrUtil</td>	
-							    					<td>用于不同的接口请求数据和响应数据签名串的生成</td>							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureCertificate</td>
-							    					<td>解析pem文件</td>
-							    					
-							    				</tr>
-							    				<tr>
-							    					<td>SignatureData</td>
-							    					<td>用于生成签名</td>
-							    					
-							    				</tr>
-												<tr>
-							    					<td> VerifySignature</td>
-							    					<td>用于验证签名</td>							    					
-							    				</tr>
-																								
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									
-									
-									
-									
-									<dl class="col-md-12 col-xs-12">
-							    		<dt>请求参数：</dt>
-							    		<div class="table-responsive search_top">
-							    		<table class="table panel panel-default table_thead">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易序号，在一个交易日内始终唯一</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranTime</td>
-							    					<td>6</td>
-							    					<td>商户的交易时间：HHmmss</td>
-							    				</tr>
-												<tr>
-							    					<td>origTranDate</td>
-							    					<td>8</td>
-							    					<td>原交易日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origTranId</td>
-							    					<td><=32</td>
-							    					<td>原始交易的商户流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origQueryId</td>
-							    					<td><=32</td>
-							    					<td>原始交易查询流水号</td>
-							    				</tr>
-												<tr>
-							    					<td>tranAmt</td>
-							    					<td><=12</td>
-							    					<td>退货金额单位：分（应小于原始交易金额）</td>
-							    				</tr>
-												
-												<tr>
-							    					<td>trustBackUrl</td>
-							    					<td><=1000</td>
-							    					<td>后台通知地址：通知商户退货交易结果。如果商户响应失败，会重发，最多发送次数为5次，每次间隔为10分钟</td>
-							    				</tr>
-												
-												
-												<tr>
-							    					<td>signature</td>
-							    					<td><=1000</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>应答参数（同步应答）</dt>
-							    		<div class="table-responsive search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-							    				<tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期，YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易序号：重新产生，不同于原消费，在一个交易日内始终唯一</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranTime</td>
-							    					<td>6</td>
-							    					<td>商户的交易时间：HHmmss</td>
-							    				</tr>
-												<tr>
-							    					<td>origTranDate</td>
-							    					<td>8</td>
-							    					<td>原交易日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origTranId</td>
-							    					<td><=32</td>
-							    					<td>原始交易的商户流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>origQueryId</td>
-							    					<td><=32</td>
-							    					<td>原始交易查询流水号</td>
-							    				</tr>
-												<tr>
-							    					<td>tranAmt</td>
-							    					<td><=10</td>
-							    					<td>退货金额单位：分（应小于原始交易金额）</td>
-							    				</tr>
-												
-												<tr>
-							    					<td>trustBackUrl</td>
-							    					<td><=1000</td>
-							    					<td>后台通知地址</td>
-							    				</tr>
-												
-												<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：退货交易的网关交易流水号，供查询用</td>
-							    				</tr>
-												<tr>
-							    					<td>respCode</td>
-							    					<td>2</td>
-							    					<td>响应码：<a href="javascript:jumpToRespAPI();" >见api响应码</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>respMsg</td>
-							    					<td><=128</td>
-							    					<td>响应描述</td>
-							    				</tr>
-												<tr>
-							    					<td>signature</td>
-							    					<td><=1000</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>商户后台返回参数列表：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>商户交易的日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易流水号：商户流水号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
-							    				</tr>
-												<tr>
-							    					<td>settleDate</td>
-							    					<td>8</td>
-							    					<td>清算日期：YYYYMMDD</td>
-							    				</tr>
-							    				<tr>
-							    					<td>quota</td>
-							    					<td><=10</td>
-							    					<td>剩余额度</td>
-							    				</tr>
-							    				<tr>
-							    					<td>respCode</td>
-							    					<td>2</td>
-							    					<td>响应码：<a href="javascript:jumpToRespAPI();" >见api响应码</a></td>
-							    				</tr>
-							    				<tr>
-							    					<td>respMsg</td>
-							    					<td><=128</td>
-							    					<td>响应描述</td>
-							    				</tr>
-							    				<tr>
-							    					<td>signature</td>
-							    					<td><=128</td>
-							    					<td>签名</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									<dl class="col-md-12 col-xs-12">
-								          <strong>完整教学代码示例：</strong>
-								          <div class="table-responsive search_top">
-								            <table class="table panel panel-default">
-	                            	          <thead>
-	                            		        <tr>
-	                            			      <td style="width:30%;">语言</td>
-	                            			      <td style="width:70%;">标题</td>
-	                            		         </tr>
-	                            	          </thead>
-	                            	          <tbody>
-	                            		        <tr>
-	                            			      <td>java</td>
-	                            			      <td><a href="onlineRefund_code.html">在线退货接口调用示例</a></td>
-	                            		        </tr>
-	                            	          </tbody>
-	                                        </table>
-							              </div>
-									</dl>
-							    </div>
-							</div>
-  <!----------------------------------------------第四部分：对账文件------------------------------------------------------------------------------------->
-                            <div class="tab-pane " id="reconciliation">
-							    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
-							    	<p>
-							    	   <span class="glyphicon glyphicon-triangle-right"></span>
-							    	   <a href="" class="nav_h">对账文件</a>
-							    	</p>
-							    </div>
-							    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-							    	<dl class="col-md-12 col-xs-12 dl_container">
-							    		<dt class="pull-left">接口说明：</dt>
-							    		<dd>1.	ftp下载路径：用户主目录下，$HOME/{商户编号}/目录（也可以双方约定具体目录）</dd>
-							    		<dd>2.	目录下有两个文件，文件名为JFHZ_ yyyyMMdd..txt是交易汇总文件，文件名为JFMX_ yyyyMMdd..txt是交易明细文件</dd>
-										<dd>3.	文件内容都是以"|"为分隔符</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">汇总模板：</dt>
-							    		<dd>
-							    			<pre class="request_example">000007|42|22764500|22867|22741633|20170408</pre>
-							    		</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">明细模板：</dt>
-							    		<dd>
-							    			<pre class="request_example">000007|20170408|1300000|20170408161223121179556|1704081612237937254464541|1300|1298700|01|</pre>
-							    		</dd>
-							    	</dl>
-							    	
-									 
-							    	
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>汇总文件说明：</dt>
-							    		<div class="table-responsive search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>							    			
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>total</td>
-							    					<td><12</td>
-							    					<td>总笔数：所有的交易数目</td>
-							    				</tr>
-							    				<tr>
-							    					<td>totalAmt</td>
-							    					<td><12</td>
-							    					<td>总金额，单位：分（所有的交易金额）</td>
-							    				</tr>
-							    				<tr>
-							    					<td>merTotalAmt</td>
-							    					<td><12</td>
-							    					<td>商户所有手续费：单位：分</td>
-							    				</tr>
-												<tr>
-							    					<td>settleTotalAmt</td>
-							    					<td><12</td>
-							    					<td>清算总金额：单位：分（”交易总金额”与”商户所有手续费”的扎差）</td>
-							    				</tr>
-							    				<tr>
-							    					<td>settleDate</td>
-							    					<td>8</td>
-							    					<td>清算日期：yyyyMMdd</td>
-							    				</tr>
-							    				
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>明细文件说明：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<thead>
-							    				<tr>
-							    					<td style="width:15%;">名称</td>
-							    					<td style="width:15%;">长度</td>
-							    					<td style="width:70%;">说明</td>
-							    				</tr>
-							    			</thead>
-							    			<tbody>
-											    <tr>
-							    					<td>merchId</td>
-							    					<td>6</td>
-							    					<td>商户编号</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranDate</td>
-							    					<td>8</td>
-							    					<td>交易日期：yyyyMMdd</td>
-							    				</tr>
-							    				<tr>
-							    					<td>tranAmt</td>
-							    					<td><=12</td>
-							    					<td>交易金额，单位：分</td>
-							    				</tr>
-							    				<tr>
-							    					<td>queryId</td>
-							    					<td><=32</td>
-							    					<td>交易查询流水号：取值同支付接口说明</td>
-							    				</tr>
-												<tr>
-							    					<td>tranId</td>
-							    					<td><=32</td>
-							    					<td>交易流水号：取值同支付接口说明</td>
-							    				</tr>
-							    				<tr>
-							    					<td>merAmt</td>
-							    					<td><=12</td>
-							    					<td>商户手续费，单位：分</td>
-							    				</tr>
-												<tr>
-							    					<td>settleAmt</td>
-							    					<td><=12</td>
-							    					<td>清算金额，单位：分（”交易金额”与”商户手续费”的扎差）</td>
-							    				</tr>
-												<tr>
-							    					<td>tranType</td>
-							    					<td>2</td>
-							    					<td>交易类型：01=消费，02=退货</td>
-							    				</tr>
-												<tr>
-							    					<td>prodId</td>
-							    					<td><=32</td>
-							    					<td>产品的编号：交易上送时则出现</td>
-							    				</tr>
-												<tr>
-							    					<td>prodMemo</td>
-							    					<td><=128</td>
-							    					<td>产品备注：交易上送时则出现</td>
-							    				</tr>
-												
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-									
-							    </div>
-							</div>
-  
-  
-  
-  <!----------------------------------------------第五部分：签名串生成演示-------------------------------------------------------------------------------->
-                         
-						   <div class="tab-pane" id="signStr">
-						       <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
-							    	<p>
-							    	   <span class="glyphicon glyphicon-triangle-right"></span>
-							    	   <a href="" class="nav_h">签名算法</a>
-							    	</p>
-							    </div>
-								<div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-								
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">一、签名串的生成规则：是以请求参数列表（本例是查询交易为例，请求参数列表可看[查询api]）的顺序，字段的值依次叠加。</dt>
-							    	</dl>
-							    	<hr>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt>请求示例：</dt>
-							    		<div class="table-responsive  search_top">
-							    		<table class="table panel panel-default">
-							    			<tbody>
-							    				<tr>
-							    					<td style="width:30%;">商户号</td>
-							    					<td style="width:70%;">000001</td>
-							    				</tr>
-							    				<tr>
-							    					<td>交易日期</td>
-							    					<td>20170415</td>
-							    				</tr>
-							    				<tr>
-							    					<td>交易流水号</td>
-							    					<td>1492248986644</td>
-							    				</tr>
-							    				<tr>
-							    					<td>交易时间</td>
-							    					<td>173626</td>
-							    				</tr>
-							    				<tr>
-							    					<td>原交易日期</td>
-							    					<td>20170414</td>
-							    				</tr>
-							    				<tr>
-							    					<td>原交易流水号</td>
-							    					<td>1492162863881</td>
-							    				</tr>
-							    				<tr>
-							    					<td>原始交易查询流水号</td>
-							    					<td>20170414174301712179944</td>
-							    				</tr>
-							    				<tr>
-							    					<td>退货金额</td>
-							    					<td>1</td>
-							    				</tr>
-							    				<tr>
-							    					<td>后台通知地址</td>
-							    					<td>http://127.0.0.1:8080/trust-gateway/pay/payFrontResp</td>
-							    				</tr>
-							    			</tbody>
-							    		</table>
-							    		</div>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
-								  		<dd class="search_top">
-								  			<textarea cols="80" rows="3" style="width:100%;">000001201704151492248986644173626201704141492162863881201704141743017121799441http://127.0.0.1:8080/trust-gateway/pay/payFrontResp</textarea>
-								  		</dd>
-							    	</dl>
-							</div><hr><hr>
-							
-							<div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-							
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">二、生成签名：生成签名需要签名串和私钥，如下所示。</dt>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-								    	<dt class="pull-left">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
-								    	<dd>abcdeefg</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">私&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
-								  		<dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">返回示例:</dt>
+            <dd><textarea cols="90" rows="6" style="width:100%;">signature=86CFF2EC8FEF1BA7E0EEF63EB20772B2C5D5BA7ABCED4512AA194740D008F6D397B4C363D54F40198A26CE5E8EA66D48E53273252ADEA4D88D1E8A2EF0C027877B3AED7E408C56BEB901BA58A944B35DBE0C5A44AE79BFD10FE82D610007247695BDD9F7AA84901443DD34D833205EE1842FB04F2C33853C36E299E88B7654FA9CF3D92C1EA9F7D7896349B4CB74405A86B545E6A1E2017129434C767D78F69DC69648189275B85775220D57C031DECA0C98699A6080F5E662A58F800E1C12C9E069064616023A24594DEC49ACD803B0FBE8DAE35ACC80158D711458BC78402D43D2F04877682C0CE5908AB3E73297F256B67AEDCEF77247CBEA5D21681D151B&merchId=000001&tranDate=20170415&tranId=1492248986644&tranTime=173626&origTranDate=20170414&origTranId=1492162863881&origQueryId=20170414174301712179944&tranAmt=1&trustBackUrl=http%3A%2F%2F127.0.0.1%3A8080%2Ftrust-gateway%2Fpay%2FpayFrontResp&respCode=05&respMsg=退货交易成功受理</textarea>
+            </dd>
+        </dl>
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">接口支持jar包：</dt>
+            <dd class="pull-left"><a href="../jufu_sdk-1.0.0-20160816.jar">下载地址</a></dd>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <div class="table-responsive ">
+                <table class="table panel panel-default table_thead">
+                    <thead>
+                    <tr>
+                        <td colspan="2" align="middle">接口支持jar包常用类简介</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>类名</td>
+                        <td>说明</td>
+                    </tr>
+                    <tr>
+                        <td> SignatureStrUtil</td>
+                        <td>用于不同的接口请求数据和响应数据签名串的生成</td>
+                    </tr>
+                    <tr>
+                        <td>SignatureCertificate</td>
+                        <td>解析pem文件</td>
+
+                    </tr>
+                    <tr>
+                        <td>SignatureData</td>
+                        <td>用于生成签名</td>
+
+                    </tr>
+                    <tr>
+                        <td> VerifySignature</td>
+                        <td>用于验证签名</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <dt>请求参数：</dt>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default table_thead">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>merchId</td>
+                        <td>6</td>
+                        <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>商户交易的日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><=32</td>
+                        <td>交易序号，在一个交易日内始终唯一</td>
+                    </tr>
+                    <tr>
+                        <td>tranTime</td>
+                        <td>6</td>
+                        <td>商户的交易时间：HHmmss</td>
+                    </tr>
+                    <tr>
+                        <td>origTranDate</td>
+                        <td>8</td>
+                        <td>原交易日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>origTranId</td>
+                        <td><=32</td>
+                        <td>原始交易的商户流水号</td>
+                    </tr>
+                    <tr>
+                        <td>origQueryId</td>
+                        <td><=32</td>
+                        <td>原始交易查询流水号</td>
+                    </tr>
+                    <tr>
+                        <td>tranAmt</td>
+                        <td><=12</td>
+                        <td>退货金额单位：分（应小于原始交易金额）</td>
+                    </tr>
+
+                    <tr>
+                        <td>trustBackUrl</td>
+                        <td><=1000</td>
+                        <td>后台通知地址：通知商户退货交易结果。如果商户响应失败，会重发，最多发送次数为5次，每次间隔为10分钟</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>signature</td>
+                        <td><=1000</td>
+                        <td>签名</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt>应答参数（同步应答）</dt>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>merchId</td>
+                        <td>6</td>
+                        <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>商户交易的日期，YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><=32</td>
+                        <td>交易序号：重新产生，不同于原消费，在一个交易日内始终唯一</td>
+                    </tr>
+                    <tr>
+                        <td>tranTime</td>
+                        <td>6</td>
+                        <td>商户的交易时间：HHmmss</td>
+                    </tr>
+                    <tr>
+                        <td>origTranDate</td>
+                        <td>8</td>
+                        <td>原交易日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>origTranId</td>
+                        <td><=32</td>
+                        <td>原始交易的商户流水号</td>
+                    </tr>
+                    <tr>
+                        <td>origQueryId</td>
+                        <td><=32</td>
+                        <td>原始交易查询流水号</td>
+                    </tr>
+                    <tr>
+                        <td>tranAmt</td>
+                        <td><=10</td>
+                        <td>退货金额单位：分（应小于原始交易金额）</td>
+                    </tr>
+
+                    <tr>
+                        <td>trustBackUrl</td>
+                        <td><=1000</td>
+                        <td>后台通知地址</td>
+                    </tr>
+
+                    <tr>
+                        <td>queryId</td>
+                        <td><=32</td>
+                        <td>交易查询流水号：退货交易的网关交易流水号，供查询用</td>
+                    </tr>
+                    <tr>
+                        <td>respCode</td>
+                        <td>2</td>
+                        <td>响应码：<a href="javascript:jumpToRespAPI();">见api响应码</a></td>
+                    </tr>
+                    <tr>
+                        <td>respMsg</td>
+                        <td><=128</td>
+                        <td>响应描述</td>
+                    </tr>
+                    <tr>
+                        <td>signature</td>
+                        <td><=1000</td>
+                        <td>签名</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt>商户后台返回参数列表：</dt>
+            <div class="table-responsive  search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>merchId</td>
+                        <td>6</td>
+                        <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>商户交易的日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><=32</td>
+                        <td>交易流水号：商户流水号</td>
+                    </tr>
+                    <tr>
+                        <td>queryId</td>
+                        <td><=32</td>
+                        <td>交易查询流水号：消费交易的网关流水号，供后继查询，退货使用</td>
+                    </tr>
+                    <tr>
+                        <td>settleDate</td>
+                        <td>8</td>
+                        <td>清算日期：YYYYMMDD</td>
+                    </tr>
+                    <tr>
+                        <td>quota</td>
+                        <td><=10</td>
+                        <td>剩余额度</td>
+                    </tr>
+                    <tr>
+                        <td>respCode</td>
+                        <td>2</td>
+                        <td>响应码：<a href="javascript:jumpToRespAPI();">见api响应码</a></td>
+                    </tr>
+                    <tr>
+                        <td>respMsg</td>
+                        <td><=128</td>
+                        <td>响应描述</td>
+                    </tr>
+                    <tr>
+                        <td>signature</td>
+                        <td><=128</td>
+                        <td>签名</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <strong>完整教学代码示例：</strong>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:30%;">语言</td>
+                        <td style="width:70%;">标题</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>java</td>
+                        <td><a href="onlineRefund_code.html">在线退货接口调用示例</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+    </div>
+</div>
+<!----------------------------------------------第四部分：对账文件------------------------------------------------------------------------------------->
+<div class="tab-pane " id="reconciliation">
+    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
+        <p>
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <a href="" class="nav_h">对账文件</a>
+        </p>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+        <dl class="col-md-12 col-xs-12 dl_container">
+            <dt class="pull-left">接口说明：</dt>
+            <dd>1. ftp下载路径：用户主目录下，$HOME/{商户编号}/目录（也可以双方约定具体目录）</dd>
+            <dd>2. 目录下有两个文件，文件名为JFHZ_ yyyyMMdd..txt是交易汇总文件，文件名为JFMX_ yyyyMMdd..txt是交易明细文件</dd>
+            <dd>3. 文件内容都是以"|"为分隔符</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">汇总模板：</dt>
+            <dd>
+                <pre class="request_example">000007|42|22764500|22867|22741633|20170408</pre>
+            </dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">明细模板：</dt>
+            <dd>
+                <pre class="request_example">000007|20170408|1300000|20170408161223121179556|1704081612237937254464541|1300|1298700|01|</pre>
+            </dd>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <dt>汇总文件说明：</dt>
+            <div class="table-responsive search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <td>merchId</td>
+                    <td>6</td>
+                    <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>total</td>
+                        <td><12</td>
+                        <td>总笔数：所有的交易数目</td>
+                    </tr>
+                    <tr>
+                        <td>totalAmt</td>
+                        <td><12</td>
+                        <td>总金额，单位：分（所有的交易金额）</td>
+                    </tr>
+                    <tr>
+                        <td>merTotalAmt</td>
+                        <td><12</td>
+                        <td>商户所有手续费：单位：分</td>
+                    </tr>
+                    <tr>
+                        <td>settleTotalAmt</td>
+                        <td><12</td>
+                        <td>清算总金额：单位：分（”交易总金额”与”商户所有手续费”的扎差）</td>
+                    </tr>
+                    <tr>
+                        <td>settleDate</td>
+                        <td>8</td>
+                        <td>清算日期：yyyyMMdd</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt>明细文件说明：</dt>
+            <div class="table-responsive  search_top">
+                <table class="table panel panel-default">
+                    <thead>
+                    <tr>
+                        <td style="width:15%;">名称</td>
+                        <td style="width:15%;">长度</td>
+                        <td style="width:70%;">说明</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>merchId</td>
+                        <td>6</td>
+                        <td>商户编号</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>8</td>
+                        <td>交易日期：yyyyMMdd</td>
+                    </tr>
+                    <tr>
+                        <td>tranAmt</td>
+                        <td><=12</td>
+                        <td>交易金额，单位：分</td>
+                    </tr>
+                    <tr>
+                        <td>queryId</td>
+                        <td><=32</td>
+                        <td>交易查询流水号：取值同支付接口说明</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td><=32</td>
+                        <td>交易流水号：取值同支付接口说明</td>
+                    </tr>
+                    <tr>
+                        <td>merAmt</td>
+                        <td><=12</td>
+                        <td>商户手续费，单位：分</td>
+                    </tr>
+                    <tr>
+                        <td>settleAmt</td>
+                        <td><=12</td>
+                        <td>清算金额，单位：分（”交易金额”与”商户手续费”的扎差）</td>
+                    </tr>
+                    <tr>
+                        <td>tranType</td>
+                        <td>2</td>
+                        <td>交易类型：01=消费，02=退货</td>
+                    </tr>
+                    <tr>
+                        <td>prodId</td>
+                        <td><=32</td>
+                        <td>产品的编号：交易上送时则出现</td>
+                    </tr>
+                    <tr>
+                        <td>prodMemo</td>
+                        <td><=128</td>
+                        <td>产品备注：交易上送时则出现</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+
+    </div>
+</div>
+
+
+<!----------------------------------------------第五部分：签名串生成演示-------------------------------------------------------------------------------->
+
+<div class="tab-pane" id="signStr">
+    <div class="col-md-2 col-sm-2 col-xs-12 pull-left">
+        <p>
+            <span class="glyphicon glyphicon-triangle-right"></span>
+            <a href="" class="nav_h">签名算法</a>
+        </p>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">一、签名串的生成规则：是以请求参数列表（本例是查询交易为例，请求参数列表可看[查询api]）的顺序，字段的值依次叠加。</dt>
+        </dl>
+        <hr>
+        <dl class="col-md-12 col-xs-12">
+            <dt>请求示例：</dt>
+            <div class="table-responsive  search_top">
+                <table class="table panel panel-default">
+                    <tbody>
+                    <tr>
+                        <td style="width:30%;">商户号</td>
+                        <td style="width:70%;">000001</td>
+                    </tr>
+                    <tr>
+                        <td>交易日期</td>
+                        <td>20170415</td>
+                    </tr>
+                    <tr>
+                        <td>交易流水号</td>
+                        <td>1492248986644</td>
+                    </tr>
+                    <tr>
+                        <td>交易时间</td>
+                        <td>173626</td>
+                    </tr>
+                    <tr>
+                        <td>原交易日期</td>
+                        <td>20170414</td>
+                    </tr>
+                    <tr>
+                        <td>原交易流水号</td>
+                        <td>1492162863881</td>
+                    </tr>
+                    <tr>
+                        <td>原始交易查询流水号</td>
+                        <td>20170414174301712179944</td>
+                    </tr>
+                    <tr>
+                        <td>退货金额</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>后台通知地址</td>
+                        <td>http://127.0.0.1:8080/trust-gateway/pay/payFrontResp</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
+            <dd class="search_top">
+                <textarea cols="80" rows="3" style="width:100%;">000001201704151492248986644173626201704141492162863881201704141743017121799441http://127.0.0.1:8080/trust-gateway/pay/payFrontResp</textarea>
+            </dd>
+        </dl>
+    </div>
+    <hr>
+
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">二、生成签名：生成签名需要签名串和私钥，如下所示。</dt>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
+            <dd>abcdeefg</dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">私&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
+            <dd>
 								  			<textarea cols="80" rows="6" style="width:100%;">-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEA4BBOJODdp+lkXQ78INt+Gl1e8AvwmSCYotAwPQv0RUvLC9Ud
 KVg6dxXaZ0PrwWMDFBiucET/b7FRlsd/YuNkfenaX3reafqh/BrYABm562hIQA/Q
@@ -1631,15 +1637,15 @@ fzaGTWJJqjx+L0fakBdB1Fwav3w8nUwpcgrfp8BRGTt2O9sdA9LDaLo0enuAOThJ
 0estjJbl7gbgFienjEhXVyBw8faArLuHFSKwEVb/tZPArZkbAvk=
 -----END RSA PRIVATE KEY-----
 </textarea>
-										</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">签名算法：</dt>
-									    <dd>
+            </dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">签名算法：</dt>
+            <dd>
 										    <textarea cols="80" rows="20" style="width:100%;">1.采用RSA的SHA1算法签名：使用私钥，对签名串进行签名操作；
 2.将签名结果的二进制数据，转换为可以打印的16进制格式（注意：是从二进制数据转化成16进制的）；
 说明：使用我们提供jar包来实现以上过程的案例，可以参考支付api，查询api，退货api中完整教学示例代码
-java签名过程示例：
+Java提供类库的签名过程示例：
     //用PKCS8编码的私钥二进制数组，获得其编码规则对象
     PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(私钥对象PrivateKey二进制数组);
     KeyFactory keyf = KeyFactory.getInstance("RSA");//生成"RSA"算法秘钥工厂
@@ -1654,46 +1660,98 @@ java签名过程示例：
     String str=SignatureData. BytesToHexStr(二进制字节数组);
 	
 </textarea>
-										</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">签名结果：</dt>
-									    <dd>
-										    <textarea cols="80" rows="6" style="width:100%">说明：下面的签名是由签名方法返回的二进制数据转化成16进制得来的
-									A92B7D3A897CC991E49583C5EE0CF52C6808B2CA1078D377074D55F1FE33943C43B67BCB8B0FA6146F1BF6FD3550D23A5FBCB4D5FB3EDB04E0009E88E8E86B258951AF2FC37EB5DA32001AAFBC7B7B0731C03819D50AF06B9970FC13A2DFCC3EB0969BE729C82C29A7221369945EFE9227FDE38BAF70D415C83CBF4AE6EA3428E07752669A0D5920C5121DF7666E953F1EFAFFE6C38504171956457D95DD0A03B2607165A47F5DF08BEB06E3A03DD6C1A1214BB690DB56B1724F896D052C939627434791F6DEA7EFA0191BC644DCCFA98331AC627DCF8FAA8009A2CFF66C26C5A34DC9B02D64263AA288A8A7D77800D91979E2B0F6D9FE61873E0CB699E36E34
-</textarea>
-										</dd>
-							    	</dl>
-							</div>
-							
-							
-							
-							
-							
-							
-							
-							<div class="col-md-10 col-sm-10 col-xs-12 pull-right">
-							
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left">三、验证签名：是对应答数据进行验签，验签需要三个要素为，签名串，签名，其中签名串，签名来自月应答数据公钥如，下所示。</dt>
-							    	</dl>，
-							    	<dl class="col-md-12 col-xs-12">
-								    	<dt class="pull-left">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
-								    	<dd>abcdeefg</dd>
-							    	</dl>
-				
-									
-									<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">签        名：</dt>
-									    <dd>
-										    <textarea cols="80" rows="6" style="width:100%">说明：下面的签名是由签名方法返回的二进制数据转化成16进制得来的
-									A92B7D3A897CC991E49583C5EE0CF52C6808B2CA1078D377074D55F1FE33943C43B67BCB8B0FA6146F1BF6FD3550D23A5FBCB4D5FB3EDB04E0009E88E8E86B258951AF2FC37EB5DA32001AAFBC7B7B0731C03819D50AF06B9970FC13A2DFCC3EB0969BE729C82C29A7221369945EFE9227FDE38BAF70D415C83CBF4AE6EA3428E07752669A0D5920C5121DF7666E953F1EFAFFE6C38504171956457D95DD0A03B2607165A47F5DF08BEB06E3A03DD6C1A1214BB690DB56B1724F896D052C939627434791F6DEA7EFA0191BC644DCCFA98331AC627DCF8FAA8009A2CFF66C26C5A34DC9B02D64263AA288A8A7D77800D91979E2B0F6D9FE61873E0CB699E36E34
-</textarea>
-										</dd>
-							    	</dl>
-												    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
-								  		<dd>
+            </dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">签名结果：下面的签名是由签名方法返回的二进制数据转化成16进制得来的</dt>
+            <dd>
+                <textarea cols="80" rows="6" style="width:100%">
+                    A92B7D3A897CC991E49583C5EE0CF52C6808B2CA1078D377074D55F1FE33943C43B67BCB8B0FA6146F1BF6FD3550D23A5FBCB4D5FB3EDB04E0009E88E8E86B258951AF2FC37EB5DA32001AAFBC7B7B0731C03819D50AF06B9970FC13A2DFCC3EB0969BE729C82C29A7221369945EFE9227FDE38BAF70D415C83CBF4AE6EA3428E07752669A0D5920C5121DF7666E953F1EFAFFE6C38504171956457D95DD0A03B2607165A47F5DF08BEB06E3A03DD6C1A1214BB690DB56B1724F896D052C939627434791F6DEA7EFA0191BC644DCCFA98331AC627DCF8FAA8009A2CFF66C26C5A34DC9B02D64263AA288A8A7D77800D91979E2B0F6D9FE61873E0CB699E36E34
+                </textarea>
+            </dd>
+        </dl>
+    </div>
+
+
+    <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">三、验证签名：是对应答数据进行签名验证，验签需要三个要素为：签名串，签名，公钥；其中签名串，签名来自于应答数据。</dt>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left">商户验签作用：</dt>
+            <dd>商户验签是确保应答消息是我们平台返回的，商户验签需要我们提供的公钥进行验签，确认应答消息的合法性。</dd>
+        </dl>
+
+        <dl class="col-md-12 col-xs-12">
+
+            <dt>示例应答数据：该示例的应答数据为支付交易的前台通知数据，排序和支付前台通知数据列表一致</dt>
+            <div class="table-responsive  search_top">
+                <table class="table panel panel-default">
+                    <tbody>
+                    <tr>
+                        <td style="width:30%;">merchId</td>
+                        <td style="width:70%;">000001</td>
+                    </tr>
+                    <tr>
+                        <td>tranDate</td>
+                        <td>20170414</td>
+                    </tr>
+                    <tr>
+                        <td>tranId</td>
+                        <td>1492162863881</td>
+                    </tr>
+                    <tr>
+                        <td>queryId</td>
+                        <td>20170414174301712179944</td>
+                    </tr>
+                    <tr>
+                        <td>settleDate</td>
+                        <td>20170414</td>
+                    </tr>
+                    <tr>
+                        <td>quota</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>respCode</td>
+                        <td>00</td>
+                    </tr>
+                    <tr>
+                        <td>respMsg</td>
+                        <td>success</td>
+                    </tr>
+                    <tr>
+                        <td>signature</td>
+                        <td>0CEB254DF379C5993C053C1F0DD27BEA8D7E9EDDBA273479B480F3B9DAFE39A464AEDD9245E006AAC75D61523BB906A7523FE6AE4B83FE1237E8CA44FC4076D740E70A5C90A20C2252E5BAF37A2A5A51DF653B93B52B2D55BF8173C8D4899C16160377447C767F66C3ABAF70082B21C99508EACEB8F2E9F866000433049B93FF1DF411432DE2AE814B483DD6C2DC2C36D9BB7AB81F222FFADD7ED947F15473C0B70F92BACD9A0553345A475B1A47CCE81CF8D0400252D968D587390CBB61F9EE6D0BBF4AC35EBC086C2D4E38AAB094613D9A5DBD560746BE731860DBFB8C80AC25F87376BAC2DE37369A8FEAFE72BF29FE57DE3C7277DB224875069D168D9D43
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dl>
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;名&nbsp;&nbsp;串：应答验证签名串是除signature外，其他字段值依次累加</dt>
+            <dd>
+                <textarea cols="80" rows="1" style="width:100%">
+ 0000012017041414921628638812017041417430171217994420170414000success
+                </textarea>
+            </dd>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：下面的签名是signature字段的值</dt>
+            <dd>
+                <textarea cols="80" rows="6" style="width:100%">
+                    0CEB254DF379C5993C053C1F0DD27BEA8D7E9EDDBA273479B480F3B9DAFE39A464AEDD9245E006AAC75D61523BB906A7523FE6AE4B83FE1237E8CA44FC4076D740E70A5C90A20C2252E5BAF37A2A5A51DF653B93B52B2D55BF8173C8D4899C16160377447C767F66C3ABAF70082B21C99508EACEB8F2E9F866000433049B93FF1DF411432DE2AE814B483DD6C2DC2C36D9BB7AB81F222FFADD7ED947F15473C0B70F92BACD9A0553345A475B1A47CCE81CF8D0400252D968D587390CBB61F9EE6D0BBF4AC35EBC086C2D4E38AAB094613D9A5DBD560746BE731860DBFB8C80AC25F87376BAC2DE37369A8FEAFE72BF29FE57DE3C7277DB224875069D168D9D43
+                </textarea>
+            </dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
+            <dd>
 								  			<textarea cols="80" rows="6" style="width:100%;">
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxIgL0rIvggAInF3Xxctg
@@ -1706,31 +1764,17 @@ BwIDAQAB
 -----END PUBLIC KEY-----
 
 </textarea>
-										</dd>
-							    	</dl>
-									
-									
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">验签算法</dt>
-									    <dd>
-										    <textarea cols="80" rows="20" style="width:100%;">1.采用RSA的SHA1算法签名：使用私钥，对签名串进行签名操作；
-2.将签名结果的二进制数据，转换为可以打印的16进制格式（注意：是从二进制数据转化成16进制的）；
-说明：使用我们提供jar包来实现以上过程的案例，可以参考支付api，查询api，退货api中完整教学示例代码
-java签名过程示例：
-    //用PKCS8编码的私钥二进制数组，获得其编码规则对象
-    PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(私钥对象PrivateKey二进制数组);
-    KeyFactory keyf = KeyFactory.getInstance("RSA");//生成"RSA"算法秘钥工厂
-    PrivateKey myprikey = keyf.generatePrivate(priPKCS8);//生成私钥对象
-    Signature sign = Signature.getInstance("SHA1withRSA");//获取SHA1withRSA算法的签名对象。
-    sign.initSign(myprikey);//用私钥初始化签名对象
-    Byte[] signStrByte = signStr.getBytes("UTF-8");//拿到签名串的二进制字节数组
-    sign.update(signStrByte);//更新签名对象
-    Byte[] signed = sign.sign();//签名返回的为二进制数组
-	
-二进制字节数组转化成16进制字符串：
-    String str=SignatureData. BytesToHexStr(二进制字节数组);
-	
-Java验签的过程：
+            </dd>
+        </dl>
+
+
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">验签算法</dt>
+            <dd>
+										    <textarea cols="80" rows="16" style="width:100%;">1.采用RSA的SHA1算法验签：使用公钥，对应答数据签名串，签名进行验签操作；
+说明：使用我们提供jar包来实现验签过程的案例，可以参考支付api，查询api，退货api中完整教学示例代码（这些示例代码是已经Java的验签过程进行了封装）
+
+Java提供类库的验签的过程：
     // 根据给定的公钥密钥生成新的 X509EncodedKeySpec
     X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(公钥对象PublicKey二进制数组);
     KeyFactory keyFactory = KeyFactory.getInstance("RSA");//生成"RSA"算法秘钥工厂
@@ -1742,311 +1786,311 @@ Java验签的过程：
     sign.update(signStrByte);//更新签名对象
     boolean flag = sign.verify(signed);//验证签名：true表示验签成功，否则失败
 </textarea>
-										</dd>
-							    	</dl>
-							    	<dl class="col-md-12 col-xs-12">
-							    		<dt class="pull-left" style="margin-bottom:5px;">验签结果：</dt>
-									    <dd>
-										    <textarea cols="80" rows="6" style="width:100%">true 或者 false</textarea>
-										</dd>
-							    	</dl>
-							</div>
-							
-							
-							
-							
-							
-                        </div>
-  <!----------------------------------------------第六部分：响应码列表-------------------------------------------------------------------------------->
-							<div class="tab-pane" id="error">
-								<strong id="respCodeAPI">api响应码：</strong>
-								<div class="table-responsive search_top">
-	                            <table class="table panel panel-default">
-	                            	<thead>
-	                            		<tr>
-	                            			<td>响应码</td>
-	                            			<td>响应描述</td>
-	                            		</tr>
-	                            	</thead>
-	                            	<tbody>
-	                            	    <tr>
-	                            			<td>00</td>
-	                            			<td>成功</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>01</td>
-	                            			<td>交易失败。详情请咨询 95516</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>02</td>
-	                            			<td>系统未开放或暂时关闭，请稍后再试</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>03</td>
-	                            			<td>交易通讯超时，请发起查询交易</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>04</td>
-	                            			<td>交易状态未明，请查询对账结果</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>05</td>
-	                            			<td>交易已受理，请稍后查询交易结果</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>06</td>
-	                            			<td>系统繁忙，请稍后再试</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>10</td>
-	                            			<td>报文格式错误</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>11</td>
-	                            			<td>验证签名失败</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>12</td>
-	                            			<td>重复交易</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>13</td>
-	                            			<td>报文交易要素缺失</td>
-	                            		</tr>
-	                            		<tr>
-	                            			<td>14</td>
-	                            			<td>批量文件格式错误</td>
-	                            		</tr>
-										<tr>
-	                            			<td>30</td>
-	                            			<td>交易未通过，请尝试使用其他银联卡支付或联系 95516</td>
-	                            		</tr>
-										<tr>
-	                            			<td>31</td>
-	                            			<td>商户状态不正确</td>
-	                            		</tr>
-										<tr>
-	                            			<td>32</td>
-	                            			<td>无此交易权限</td>
-	                            		</tr>
-										<tr>
-	                            			<td>33</td>
-	                            			<td>交易金额超限</td>
-	                            		</tr>
-										<tr>
-	                            			<td>34</td>
-	                            			<td>查无此交易</td>
-	                            		</tr>
-										<tr>
-	                            			<td>35</td>
-	                            			<td>原交易不存在或状态不正确</td>
-	                            		</tr>
-									
-										<tr>
-	                            			<td>36</td>
-	                            			<td>与原交易信息不符</td>
-	                            		</tr>
-										<tr>
-	                            			<td>37</td>
-	                            			<td>已超过最大查询次数或操作过于频繁</td>
-	                            		</tr>
-										<tr>
-	                            			<td>38</td>
-	                            			<td>银联风险受限</td>
-	                            		</tr>
-										<tr>
-	                            			<td>39</td>
-	                            			<td>交易不在受理时间范围内</td>
-	                            		</tr>
-										<tr>
-	                            			<td>40</td>
-	                            			<td>绑定关系检查失败</td>
-	                            		</tr>
-										<tr>
-	                            			<td>41</td>
-	                            			<td>批量状态不正确，无法下载</td>
-	                            		</tr>
-										<tr>
-	                            			<td>42</td>
-	                            			<td>扣款成功但交易超过规定支付时间</td>
-	                            		</tr>
-										<tr>
-	                            			<td>43</td>
-	                            			<td>无此业务权限，详情请咨询95516</td>
-	                            		</tr>
-										<tr>
-	                            			<td>44</td>
-	                            			<td>输入号码错误或暂未开通此项业务，详情请咨询95516</td>
-	                            		</tr>
-										<tr>
-	                            			<td>60</td>
-	                            			<td>交易失败，详情请咨询您的发卡行</td>
-	                            		</tr>
-										<tr>
-	                            			<td>61</td>
-	                            			<td>输入的卡号无效，请确认后输入</td>
-	                            		</tr>
-										<tr>
-	                            			<td>62</td>
-	                            			<td>交易失败，发卡银行不支持该商户，请更换其他银行卡</td>
-	                            		</tr>
-										<tr>
-	                            			<td>63</td>
-	                            			<td>卡状态不正确 </td>
-	                            		</tr>
-										<tr>
-	                            			<td>64</td>
-	                            			<td>卡上的余额不足</td>
-	                            		</tr>
-										<tr>
-	                            			<td>65</td>
-	                            			<td>输入的密码、有效期或 CVN2 有误，交易失败</td>
-	                            		</tr>
-									
-										<tr>
-	                            			<td>66</td>
-	                            			<td>持卡人身份信息或手机号输入不正确，验证失败</td>
-	                            		</tr>
-										<tr>
-	                            			<td>67</td>
-	                            			<td>密码输入次数超限 </td>
-	                            		</tr>
-										<tr>
-	                            			<td>68</td>
-	                            			<td>您的银行卡暂不支持该业务，请向您的银行或 95516 咨询</td>
-	                            		</tr>
-										<tr>
-	                            			<td>69</td>
-	                            			<td>您的输入超时，交易失败
-										<tr>
-										<tr>
-	                            			<td>70</td>
-	                            			<td>交易已跳转，等待持卡人输入</td>
-	                            		</tr>
-										<tr>
-	                            			<td>71</td>
-	                            			<td>动态口令或短信验证码校验失败 </td>
-	                            		</tr>
-										<tr>
-	                            			<td>72</td>
-	                            			<td>业务，请去柜面或网银开通或拨打{} </td>
-	                            		</tr>
-										<tr>
-	                            			<td>73</td>
-	                            			<td>支付卡已超过有效期</td>
-	                            		</tr>
-										<tr>
-	                            			<td>74</td>
-	                            			<td>扣款成功，销账未知</td>
-	                            		</tr>
-										<tr>
-	                            			<td>75</td>
-	                            			<td>扣款成功，销账失败</td>
-	                            		</tr>
-									
-										<tr>
-	                            			<td>76</td>
-	                            			<td>需要验密开通</td>
-	                            		</tr>
-										<tr>
-	                            			<td>77</td>
-	                            			<td>银行卡未开通认证支付</td>
-	                            		</tr>
-										<tr>
-	                            			<td>78</td>
-	                            			<td>发卡行交易权限受限，详情请咨询您的发卡行</td>
-	                            		</tr>
-										<tr>
-	                            			<td>79</td>
-	                            			<td>此卡可用，但发卡行暂不支持短信验证</td>
-	                            		</tr>
-										<tr>
-										<tr>
-	                            			<td>80</td>
-	                            			<td>交易失败，Token 已过期</td>
-	                            		</tr>
-										<tr>
-	                            			<td>81</td>
-	                            			<td>月累计交易笔数(金额)超限</td>
-	                            		</tr>
-										<tr>
-	                            			<td>82</td>
-	                            			<td>需要校验密码</td>
-	                            		</tr>
-										<tr>
-	                            			<td>98</td>
-	                            			<td>文件不存在</td>
-	                            		</tr>
-										<tr>
-	                            			<td>99</td>
-	                            			<td>通用错误</td>
-	                            		</tr>
-										<tr>
-	                            			<td>A6</td>
-	                            			<td>缺陷的成功</td>
-	                            		</tr>
-									
+            </dd>
+        </dl>
+        <dl class="col-md-12 col-xs-12">
+            <dt class="pull-left" style="margin-bottom:5px;">验签结果：</dt>
+            <dd>
+                <textarea cols="80" rows="1" style="width:100%">true 或者 false</textarea>
+            </dd>
+        </dl>
+    </div>
 
-	                            	</tbody>
-	                             </table>
-	                            </div>
-							</div>
+
+</div>
+<!----------------------------------------------第六部分：响应码列表-------------------------------------------------------------------------------->
+<div class="tab-pane" id="error">
+    <strong id="respCodeAPI">api响应码：</strong>
+    <div class="table-responsive search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td>响应码</td>
+                <td>响应描述</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>00</td>
+                <td>成功</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>交易失败。详情请咨询 95516</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>系统未开放或暂时关闭，请稍后再试</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>交易通讯超时，请发起查询交易</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>交易状态未明，请查询对账结果</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>交易已受理，请稍后查询交易结果</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>系统繁忙，请稍后再试</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>报文格式错误</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>验证签名失败</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>重复交易</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>报文交易要素缺失</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>批量文件格式错误</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>交易未通过，请尝试使用其他银联卡支付或联系 95516</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>商户状态不正确</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>无此交易权限</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>交易金额超限</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>查无此交易</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>原交易不存在或状态不正确</td>
+            </tr>
+
+            <tr>
+                <td>36</td>
+                <td>与原交易信息不符</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>已超过最大查询次数或操作过于频繁</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>银联风险受限</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>交易不在受理时间范围内</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>绑定关系检查失败</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>批量状态不正确，无法下载</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>扣款成功但交易超过规定支付时间</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>无此业务权限，详情请咨询95516</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>输入号码错误或暂未开通此项业务，详情请咨询95516</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>交易失败，详情请咨询您的发卡行</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>输入的卡号无效，请确认后输入</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>交易失败，发卡银行不支持该商户，请更换其他银行卡</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>卡状态不正确</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>卡上的余额不足</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>输入的密码、有效期或 CVN2 有误，交易失败</td>
+            </tr>
+
+            <tr>
+                <td>66</td>
+                <td>持卡人身份信息或手机号输入不正确，验证失败</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>密码输入次数超限</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>您的银行卡暂不支持该业务，请向您的银行或 95516 咨询</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>您的输入超时，交易失败
+            <tr>
+            <tr>
+                <td>70</td>
+                <td>交易已跳转，等待持卡人输入</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>动态口令或短信验证码校验失败</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>业务，请去柜面或网银开通或拨打{}</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>支付卡已超过有效期</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>扣款成功，销账未知</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>扣款成功，销账失败</td>
+            </tr>
+
+            <tr>
+                <td>76</td>
+                <td>需要验密开通</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>银行卡未开通认证支付</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>发卡行交易权限受限，详情请咨询您的发卡行</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>此卡可用，但发卡行暂不支持短信验证</td>
+            </tr>
+            <tr>
+            <tr>
+                <td>80</td>
+                <td>交易失败，Token 已过期</td>
+            </tr>
+            <tr>
+                <td>81</td>
+                <td>月累计交易笔数(金额)超限</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td>需要校验密码</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td>文件不存在</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>通用错误</td>
+            </tr>
+            <tr>
+                <td>A6</td>
+                <td>缺陷的成功</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
 <!----------------------------------------------第七部分：收费标准-------------------------------------------------------------------------------->
-							<div class="tab-pane" id="pice">	
-								<strong>收费标准：</strong>
-								<div class="table-responsive search_top">
-								<table class="table panel panel-default">
-	                            	<thead>
-	                            		<tr>
-	                            			<td style="width:15%;">名称</td>
-	                            			<td style="width:15%;">费率</td>	                            			
-	                            			<td style="width:70%;">说明</td>
-	                            		</tr>
-	                            	</thead>
-	                            	<tbody>
-	                            	     <tr>
-	                            			<td>标准资费</td>
-	                            			<td>1.0%</td>
-	                            			<td>最低1.00元，量多电询</td>
-	                            		</tr>
-	                            	</tbody>
-	                            </table>
-	                            </div>
-							</div>
-							<!-- 第4部分内容. -->
-							<div class="tab-pane" id="code">
-								<strong>完整教学代码示例：</strong>
-								<div class="table-responsive search_top">
-								<table class="table panel panel-default">
-	                            	<thead>
-	                            		<tr>
-	                            			<td style="width:30%;">语言</td>
-	                            			<td style="width:70%;">标题</td>
-	                            		</tr>
-	                            	</thead>
-	                            	<tbody>
-	                            		<tr>
-	                            			<td>java</td>
-	                            			<td><a href="onlinePay_code.html">在线支付接口调用示例</a></td>
-	                            		</tr>
-	                            	</tbody>
-	                            </table>
-	                            </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</article>
-	<footer class="footer_color">
-		<address class="container footer">
-			  <p><ins></ins>　 润孚接口数据平台</p>
-			  <p>商务咨询：400-021-198　　　　工作时间:周一至周五 10:00-19:00　　　　反馈建议：service@trust-one.com</p>
-			  <p>润孚网络科技（上海）有限公司沪ICP备16028054号</p>
-		</address>
-	</footer>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    </body>
+<div class="tab-pane" id="pice">
+    <strong>收费标准：</strong>
+    <div class="table-responsive search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width:15%;">名称</td>
+                <td style="width:15%;">费率</td>
+                <td style="width:70%;">说明</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>标准资费</td>
+                <td>1.0%</td>
+                <td>最低1.00元，量多电询</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- 第4部分内容. -->
+<div class="tab-pane" id="code">
+    <strong>完整教学代码示例：</strong>
+    <div class="table-responsive search_top">
+        <table class="table panel panel-default">
+            <thead>
+            <tr>
+                <td style="width:30%;">语言</td>
+                <td style="width:70%;">标题</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>java</td>
+                <td><a href="onlinePay_code.html">在线支付接口调用示例</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<footer class="footer_color">
+    <address class="container footer">
+        <p>
+            <ins></ins>
+            　 润孚接口数据平台
+        </p>
+        <p>商务咨询：400-021-198　　　　工作时间:周一至周五 10:00-19:00　　　　反馈建议：service@trust-one.com</p>
+        <p>润孚网络科技（上海）有限公司沪ICP备16028054号</p>
+    </address>
+</footer>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
 </html>
