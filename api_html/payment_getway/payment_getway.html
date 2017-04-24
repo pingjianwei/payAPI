@@ -1597,19 +1597,23 @@
     </div>
     <hr>
 
+
+
     <div class="col-md-10 col-sm-10 col-xs-12 pull-right">
 
         <dl class="col-md-12 col-xs-12">
             <dt class="pull-left">二、生成签名：生成签名需要签名串和私钥，如下所示。</dt>
         </dl>
+
         <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left">签&nbsp;&nbsp;名&nbsp;&nbsp;串：</dt>
-            <dd>abcdeefg</dd>
-        </dl>
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">私&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
             <dd>
-								  			<textarea cols="80" rows="6" style="width:100%;">-----BEGIN RSA PRIVATE KEY-----
+                <textarea cols="80" rows="30" style="width:100%;">
+
+ 签 名 串：
+ abcdeefg
+
+ 私    钥：
+-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEA4BBOJODdp+lkXQ78INt+Gl1e8AvwmSCYotAwPQv0RUvLC9Ud
 KVg6dxXaZ0PrwWMDFBiucET/b7FRlsd/YuNkfenaX3reafqh/BrYABm562hIQA/Q
 mZMoDmMe0Zg4VOle7J5H6oKiBewZkpi1kw24UpP3o4a2twUWxNRbMM5ai3JNqztS
@@ -1636,40 +1640,51 @@ fzaGTWJJqjx+L0fakBdB1Fwav3w8nUwpcgrfp8BRGTt2O9sdA9LDaLo0enuAOThJ
 5SIGGeQ3IFFBPFMvSwoPH62u2JuA9WsMAFwVfUx9uG8WV6Y6GeYiKAs7zdzzyEsignStrByte
 0estjJbl7gbgFienjEhXVyBw8faArLuHFSKwEVb/tZPArZkbAvk=
 -----END RSA PRIVATE KEY-----
-</textarea>
-            </dd>
-        </dl>
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">签名算法：</dt>
-            <dd>
-										    <textarea cols="80" rows="20" style="width:100%;">1.采用RSA的SHA1算法签名：使用私钥，对签名串进行签名操作；
+
+签名算法：
+1.采用RSA的SHA1算法签名：使用私钥，对签名串进行签名操作；
 2.将签名结果的二进制数据，转换为可以打印的16进制格式（注意：是从二进制数据转化成16进制的）；
 说明：使用我们提供jar包来实现以上过程的案例，可以参考支付api，查询api，退货api中完整教学示例代码
 Java提供类库的签名过程示例：
-    //用PKCS8编码的私钥二进制数组，获得其编码规则对象
-    PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(私钥对象PrivateKey二进制数组);
-    KeyFactory keyf = KeyFactory.getInstance("RSA");//生成"RSA"算法秘钥工厂
-    PrivateKey myprikey = keyf.generatePrivate(priPKCS8);//生成私钥对象
-    Signature sign = Signature.getInstance("SHA1withRSA");//获取SHA1withRSA算法的签名对象。
-    sign.initSign(myprikey);//用私钥初始化签名对象
-    Byte[] signStrByte = signStr.getBytes("UTF-8");//拿到签名串的二进制字节数组
-    sign.update(signStrByte);//更新签名对象
-    Byte[] signed = sign.sign();//签名返回的为二进制数组
-	
-二进制字节数组转化成16进制字符串：
-    String str=SignatureData. BytesToHexStr(二进制字节数组);
-	
-</textarea>
+    //用PKCS8编码的私钥二进制数组，获得其编码规则对象，privateBytes是私钥的二进制字节数组
+    PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(privateBytes);
+    //生成"RSA"算法秘钥工厂
+    KeyFactory keyf = KeyFactory.getInstance("RSA");
+    //生成私钥对象
+    PrivateKey myprikey = keyf.generatePrivate(priPKCS8);
+    //获取SHA1withRSA算法的签名对象。
+    Signature sign = Signature.getInstance("SHA1withRSA");
+    //用私钥初始化签名对象
+    sign.initSign(myprikey);
+    //拿到签名串的二进制字节数组
+    Byte[] signStrByte = signStr.getBytes("UTF-8");
+    //更新签名对象
+    sign.update(signStrByte);
+    //签名返回的为二进制数组
+    Byte[] signed = sign.sign();
+
+二进制字节数组转化成16进制字符串：java示例代码
+    public static String byteArr2HexString(byte[] bytearr) {
+		if (bytearr == null) {
+			return "null";
+		}
+		StringBuffer sb = new StringBuffer();
+		for (int k = 0; k < bytearr.length; k++) {
+			if ((bytearr[k] & 0xFF) < 16) {
+				sb.append("0");
+			}
+			sb.append(Integer.toString(bytearr[k] & 0xFF, 16));
+		}
+		return sb.toString();
+	}
+
+签名结果：下面的签名是由签名方法返回的二进制数据转化成16进制得来的。
+ A92B7D3A897CC991E49583C5EE0CF52C6808B2CA1078D377074D55F1FE33943C43B67BCB8B0FA6146F1BF6FD3550D23A5FBCB4D5FB3EDB04E0009E88E8E86B258951AF2FC37EB5DA32001AAFBC7B7B0731C03819D50AF06B9970FC13A2DFCC3EB0969BE729C82C29A7221369945EFE9227FDE38BAF70D415C83CBF4AE6EA3428E07752669A0D5920C5121DF7666E953F1EFAFFE6C38504171956457D95DD0A03B2607165A47F5DF08BEB06E3A03DD6C1A1214BB690DB56B1724F896D052C939627434791F6DEA7EFA0191BC644DCCFA98331AC627DCF8FAA8009A2CFF66C26C5A34DC9B02D64263AA288A8A7D77800D91979E2B0F6D9FE61873E0CB699E36E34
+
+                 </textarea>
             </dd>
         </dl>
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">签名结果：下面的签名是由签名方法返回的二进制数据转化成16进制得来的</dt>
-            <dd>
-                <textarea cols="80" rows="6" style="width:100%">
-                    A92B7D3A897CC991E49583C5EE0CF52C6808B2CA1078D377074D55F1FE33943C43B67BCB8B0FA6146F1BF6FD3550D23A5FBCB4D5FB3EDB04E0009E88E8E86B258951AF2FC37EB5DA32001AAFBC7B7B0731C03819D50AF06B9970FC13A2DFCC3EB0969BE729C82C29A7221369945EFE9227FDE38BAF70D415C83CBF4AE6EA3428E07752669A0D5920C5121DF7666E953F1EFAFFE6C38504171956457D95DD0A03B2607165A47F5DF08BEB06E3A03DD6C1A1214BB690DB56B1724F896D052C939627434791F6DEA7EFA0191BC644DCCFA98331AC627DCF8FAA8009A2CFF66C26C5A34DC9B02D64263AA288A8A7D77800D91979E2B0F6D9FE61873E0CB699E36E34
-                </textarea>
-            </dd>
-        </dl>
+
     </div>
 
 
@@ -1685,7 +1700,7 @@ Java提供类库的签名过程示例：
 
         <dl class="col-md-12 col-xs-12">
 
-            <dt>示例应答数据：该示例的应答数据为支付交易的前台通知数据，排序和支付前台通知数据列表一致</dt>
+            <dt>示例应答数据：该示例的应答数据为支付交易的前台通知数据，排序和支付API中商户前台返回参数列表一致</dt>
             <div class="table-responsive  search_top">
                 <table class="table panel panel-default">
                     <tbody>
@@ -1732,27 +1747,16 @@ Java提供类库的签名过程示例：
         </dl>
 
         <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;名&nbsp;&nbsp;串：应答验证签名串是除signature外，其他字段值依次累加</dt>
+
             <dd>
-                <textarea cols="80" rows="1" style="width:100%">
+								  			<textarea cols="80" rows="40" style="width:100%;">
+签 名 串：应答验证签名串是除signature外，其他字段值按照支付API中商户前台返回参数列表顺序依次叠加。
  0000012017041414921628638812017041417430171217994420170414000success
-                </textarea>
-            </dd>
-        </dl>
 
+签    名：下面的签名是signature字段的值
+ 0CEB254DF379C5993C053C1F0DD27BEA8D7E9EDDBA273479B480F3B9DAFE39A464AEDD9245E006AAC75D61523BB906A7523FE6AE4B83FE1237E8CA44FC4076D740E70A5C90A20C2252E5BAF37A2A5A51DF653B93B52B2D55BF8173C8D4899C16160377447C767F66C3ABAF70082B21C99508EACEB8F2E9F866000433049B93FF1DF411432DE2AE814B483DD6C2DC2C36D9BB7AB81F222FFADD7ED947F15473C0B70F92BACD9A0553345A475B1A47CCE81CF8D0400252D968D587390CBB61F9EE6D0BBF4AC35EBC086C2D4E38AAB094613D9A5DBD560746BE731860DBFB8C80AC25F87376BAC2DE37369A8FEAFE72BF29FE57DE3C7277DB224875069D168D9D43
 
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">签&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：下面的签名是signature字段的值</dt>
-            <dd>
-                <textarea cols="80" rows="6" style="width:100%">
-                    0CEB254DF379C5993C053C1F0DD27BEA8D7E9EDDBA273479B480F3B9DAFE39A464AEDD9245E006AAC75D61523BB906A7523FE6AE4B83FE1237E8CA44FC4076D740E70A5C90A20C2252E5BAF37A2A5A51DF653B93B52B2D55BF8173C8D4899C16160377447C767F66C3ABAF70082B21C99508EACEB8F2E9F866000433049B93FF1DF411432DE2AE814B483DD6C2DC2C36D9BB7AB81F222FFADD7ED947F15473C0B70F92BACD9A0553345A475B1A47CCE81CF8D0400252D968D587390CBB61F9EE6D0BBF4AC35EBC086C2D4E38AAB094613D9A5DBD560746BE731860DBFB8C80AC25F87376BAC2DE37369A8FEAFE72BF29FE57DE3C7277DB224875069D168D9D43
-                </textarea>
-            </dd>
-        </dl>
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钥：</dt>
-            <dd>
-								  			<textarea cols="80" rows="6" style="width:100%;">
+公    钥：
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxIgL0rIvggAInF3Xxctg
 BL4f3e+DPqFAcu3HgMmmlUzLU/lYx2tuE1WfqzbF2KPg9mPEzAnwKr+hkC83Gpsp
@@ -1763,39 +1767,36 @@ r7dNbzmeTQZfxVV8RpNctBv7GPK1eC+nTuX2mX2nBigCINZ7nH0O5iTWjh2A87WI
 BwIDAQAB
 -----END PUBLIC KEY-----
 
-</textarea>
-            </dd>
-        </dl>
-
-
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">验签算法</dt>
-            <dd>
-										    <textarea cols="80" rows="16" style="width:100%;">1.采用RSA的SHA1算法验签：使用公钥，对应答数据签名串，签名进行验签操作；
+验签算法：
+1.采用RSA的SHA1算法验签：使用公钥，对应答数据签名串，签名进行验签操作；
 说明：使用我们提供jar包来实现验签过程的案例，可以参考支付api，查询api，退货api中完整教学示例代码（这些示例代码是已经Java的验签过程进行了封装）
 
 Java提供类库的验签的过程：
-    // 根据给定的公钥密钥生成新的 X509EncodedKeySpec
-    X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(公钥对象PublicKey二进制数组);
-    KeyFactory keyFactory = KeyFactory.getInstance("RSA");//生成"RSA"算法秘钥工厂
-    PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);//生成公钥钥对象
-    byte[] signed = this.hexStrToBytes(signature);//将16进制签名转化成二进制数组
-    Signature sign = Signature.getInstance("SHA1withRSA");//获取SHA1withRSA算法的签名对象。
-    sign.initVerify(pubKey);//用公钥初始化签名对象
-    byte[] signStrByte = signStr.getBytes("UTF-8");//拿到签名串的二进制字节数组
-    sign.update(signStrByte);//更新签名对象
-    boolean flag = sign.verify(signed);//验证签名：true表示验签成功，否则失败
+    // 根据给定的公钥密钥生成新的 X509EncodedKeySpec,pubBytes是公钥的二进制字节数据
+    X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(pubBytes);
+    //生成"RSA"算法秘钥工厂
+    KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+    //生成公钥钥对象
+    PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
+    //将16进制签名转化成二进制数组
+    byte[] signed = this.hexStrToBytes(signature);
+    //获取SHA1withRSA算法的签名对象。
+    Signature sign = Signature.getInstance("SHA1withRSA");
+    //用公钥初始化签名对象
+    sign.initVerify(pubKey);
+    //拿到签名串的二进制字节数组
+    byte[] signStrByte = signStr.getBytes("UTF-8");
+    //更新签名对象
+    sign.update(signStrByte);
+    //验证签名：true表示验签成功，否则失败
+    boolean flag = sign.verify(signed);
+
+验签结果：true
+
 </textarea>
             </dd>
         </dl>
-        <dl class="col-md-12 col-xs-12">
-            <dt class="pull-left" style="margin-bottom:5px;">验签结果：</dt>
-            <dd>
-                <textarea cols="80" rows="1" style="width:100%">true 或者 false</textarea>
-            </dd>
-        </dl>
     </div>
-
 
 </div>
 <!----------------------------------------------第六部分：响应码列表-------------------------------------------------------------------------------->
